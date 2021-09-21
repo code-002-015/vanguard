@@ -1,0 +1,8 @@
+*.env
+readme.md
+# public/
+public/lib
+public/storage
+public/vendor
+public/theme/sysu/images
+vendor
