@@ -99,7 +99,7 @@ label {
 
 .signin-hero {
     height: 100vh;
-    background: #ebf7ff url(../img/WSI-Logo.png) center center no-repeat;
+    background: #ebf7ff url(../img/Logo.png) center center no-repeat;
     background-size: 70%;
 }
 
@@ -198,8 +198,8 @@ table th {
 }
 
 .upload-image {
-    height: 500px;
-    width: 350px;
+    height: 192px;
+    /*width: 350px;*/
     background: #c5d2d8 url(../img/thumb-rect.svg) center;
 }
 

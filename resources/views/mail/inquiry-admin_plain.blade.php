@@ -7,7 +7,6 @@ Subject: {{ $clientInfo['subject'] }}
 Name: {{ $clientInfo['name'] }}
 Email: {{ $clientInfo['email'] }}
 Contact Number: {{ $clientInfo['contact'] }}
-Services: {{ $clientInfo['services'] }}
 Message: {{ $clientInfo['message'] }}
 
 

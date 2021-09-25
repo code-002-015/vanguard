@@ -1,0 +1,139 @@
+/*-----------------------------------------------------------------------------------
+
+	menu.scss
+
+-----------------------------------------------------------------------------------*/
+
+
+.menu{
+    position: relative;
+
+    .btn:focus,.btn:hover,.btn:active {
+        box-shadow: none!important;
+    }
+    .btn.active{
+        color: var(--theme-color);
+    }
+    .btn-group .btn{
+        font-size: 16px;
+        font-family: var(--body-font);
+        font-weight: 600;
+        box-shadow: none!important;
+    }
+
+    .btn-group:not(:first-child) > .btn, .btn-group > .btn:not(:first-child) {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+}
+
+.menu-item{
+    padding: 15px;
+    border: 1px dashed rgba(0,0,0,0.3);
+
+    & > div > a {
+        margin-right: 20px;
+    }
+
+    img{
+        min-width: 150px;
+        box-shadow: 0px 4px 8px 0px rgba(111, 102, 88, 0.15);
+    }
+
+    .price {
+        font-weight: 700;
+        color: var(--theme-color);
+        margin-bottom: 5px;
+        font-size: 20px;
+
+        span {
+            color: var(--body-color);
+            text-decoration: line-through;
+            white-space: nowrap;
+        }
+    }
+
+    h4 {
+        margin-bottom: 5px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        hyphens: auto;
+        max-height: 24px;
+    }
+
+    p {
+        margin-bottom: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        max-height: 3.59999rem;
+        overflow: hidden;
+        hyphens: auto;
+        max-height: 24px;
+    }
+}
+
+// Cart
+// 
+
+.table-cart {
+    min-width: 930px;
+}
+
+.table-custom {
+    min-width: 825px;
+}
+
+.table-cart tbody tr td {
+    padding: 20px 40px 20px 10px;
+}
+
+
+.table-cart thead th {
+    border-bottom: 0px;
+    text-transform: capitalize;
+    color: var(--dark-color);
+
+}
+
+.table-cart, .table-custom {
+    .price {
+        span {
+            text-decoration: line-through;
+            color: #aaa;
+            white-space: nowrap;
+        }
+    }
+}
+
+.table-cart td, .table-cart th {
+    vertical-align: middle;
+    color: #444;
+
+}
+
+.font-size-20{
+	font-size: 20px;
+}
+
+.close{
+	cursor: pointer;
+	transition: .2s ease;
+	&:hover{
+		color: var(--theme-color);
+	}
+}
+
+.form-cart {
+    height: 46px;
+}
+
+.quantity{
+	width: 50px !important;
+	height: 31px !important;
+    text-align: center;
+}

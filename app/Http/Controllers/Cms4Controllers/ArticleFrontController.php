@@ -125,30 +125,27 @@ class ArticleFrontController extends Controller
         else{
             $years = DB::select('SELECT year(date) as yr,count(id) as total_articles FROM `articles`  where deleted_at is null and status="Published" GROUP by year(date) ORDER BY year(date)');
 
-            $data = '<div class="accordion clearfix">';
+            $data = '<ul>';
 
             $row = 0;
             foreach($years as $year){
                 $r = $row++;
                 $data .= '
-                    <div class="toggle toggle-border mb-1">
-                        <div class="togglet"><i class="toggle-closed icon-ok-circle"></i><i class="toggle-open icon-remove-circle"></i>'.$year->yr.'</div>
-                            <div class="togglec p-0 p-1 px-3">
-                                <ul class="quicklinks m-0">';
+                <li>
+                    <a href="javascript:void(0)"><div>'.$year->yr.'</div></a>
+                    <ul>';
 
-                                    $months = DB::select('SELECT year(date) as yr,month(date) as mo,count(id) as total_articles FROM `articles` WHERE year(date)="'.$year->yr.'" and deleted_at is null and status="Published" GROUP by year(date),month(date) ORDER BY month(date)');
+                    $months = DB::select('SELECT year(date) as yr,month(date) as mo,count(id) as total_articles FROM `articles` WHERE year(date)="'.$year->yr.'" and deleted_at is null and status="Published" GROUP by year(date),month(date) ORDER BY month(date)');
 
-                                    foreach($months as $month){
-                                        $data .= '<li><a href="'.route('news.front.index').'?type=month&criteria='.$year->yr.'-'.$month->mo.'">'.date("F", mktime(0, 0, 0, $month->mo, 1)).' ('.$month->total_articles.')</a></li>';
-                                    }
+                    foreach($months as $month){
+                        $data .= '<li><a href="'.route('news.front.index').'?type=month&criteria='.$year->yr.'-'.$month->mo.'"><div>'.date("F", mktime(0, 0, 0, $month->mo, 1)).' ('.$month->total_articles.')</div></a></li>';
+                    }
 
-                        $data .= '
-                                </ul>
-                            </div>
-                        </div>';
+                    $data .= '</ul>
+                </li>';
             }
 
-            $data .= '</div>';
+            $data .= '</ul>';
         }
 
         return $data;
@@ -163,10 +160,10 @@ class ArticleFrontController extends Controller
         else{
             $categories = DB::select('SELECT ifnull(c.name, "Uncategorized") as cat, ifnull(c.id,0) as cid,count(ifnull(c.id,0)) as total_articles FROM `articles` a left join article_categories c on c.id=a.category_id where a.deleted_at is null and status="Published" GROUP BY c.name,c.id ORDER BY c.name');
 
-            $data = '<ul class="quicklinks mb-3">';
+            $data = '<ul>';
 
             foreach($categories as $category){
-                    $data .= '<li><a href="'.route('news.front.index').'?type=category&criteria='.$category->cid.'">'.$category->cat.' ('.$category->total_articles.')</a></li>';
+                    $data .= '<li><a href="'.route('news.front.index').'?type=category&criteria='.$category->cid.'"><div>'.$category->cat.' ('.$category->total_articles.')</div></a></li>';
             }
 
             $data .= '</ul>';

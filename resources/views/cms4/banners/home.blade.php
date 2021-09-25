@@ -423,7 +423,7 @@
                 // validate_images(evt, upload_image);
 
                 let files = evt.target.files;
-                let maxSize = 1;
+                let maxSize = 2;
                 let validateFileTypes = ["image/jpeg", "image/png"];
                 let requiredWidth = "{{ env('MAIN_BANNER_WIDTH') }}";
                 let requiredHeight =  "{{ env('MAIN_BANNER_HEIGHT') }}";

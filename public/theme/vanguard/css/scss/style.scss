@@ -1,0 +1,100 @@
+/*-----------------------------------------------------------------------------------
+
+    Theme Name: Canvas
+    Theme URI: http://themes.semicolonweb.com/html/canvas
+    Description: The Multi-Purpose Template
+    Author: SemiColonWeb
+    Author URI: http://themeforest.net/user/semicolonweb
+    Version: 5.9.1
+
+    SASS Stylesheet
+
+-----------------------------------------------------------------------------------*/
+
+
+//Bootstrap
+@import "sass/bootstrap";
+
+// Initialize
+@import "sass/variables";
+@import "sass/mixins";
+
+// Core CSS
+@import "sass/typography";
+@import "sass/helpers";
+@import "sass/layouts";
+
+
+// Content Blocks
+@import "sass/topbar";
+@import "sass/header";
+@import "sass/banner";
+@import "sass/pagetitle";
+@import "sass/content";
+@import "sass/portfolio";
+@import "sass/blog";
+@import "sass/shop";
+@import "sass/events";
+@import "sass/menu";
+@import "sass/quicklinks";
+@import "sass/navigation";
+@import "sass/news";
+@import "sass/cookiealert";
+
+
+// Shortcodes
+@import "sass/shortcodes";
+
+
+// Footer
+@import "sass/footer";
+
+
+// Widgets
+@import "sass/widgets";
+
+
+// Extras
+@import "sass/extras";
+
+
+// Animate.css
+@import "sass/animate";
+
+
+// Responsive
+@import "sass/responsive";
+
+
+// Slick
+@import "sass/slick";
+@import "sass/slick-theme";
+
+
+// Icofont
+@import "sass/icofont";
+
+
+// AOS
+@import "sass/aos";
+
+
+// Font Awesome
+@import "sass/fontawesome";
+
+
+// Jssocial
+@import "sass/jssocials-theme-plain";
+@import "sass/jssocials";
+
+
+// Font Icons
+@import "sass/font-icons";
+
+
+// Magnific Popup
+@import "sass/magnific-popup";
+
+
+// Swiper
+@import "sass/swiper";

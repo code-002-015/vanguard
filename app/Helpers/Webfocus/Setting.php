@@ -76,7 +76,7 @@ class Setting {
         if ($date != null && strtotime($date) > strtotime('-1 day')) {
             return Carbon::parse($date)->toFormattedDateString();
         } else {
-            return date('M d, Y', strtotime($date));
+            return date('F d, Y', strtotime($date));
             // return 'on '.date('M d, Y', strtotime($date));
         }
     }

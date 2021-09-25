@@ -72,10 +72,6 @@
                 <td>{{ $clientInfo['contact'] }}</td>
             </tr>
             <tr>
-                <td><strong>Services</strong></td>
-                <td>{{ $clientInfo['services'] }}</td>
-            </tr>
-            <tr>
                 <td><strong>Message</strong></td>
                 <td>{{ $clientInfo['message'] }}</td>
             </tr>

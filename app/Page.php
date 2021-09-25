@@ -238,6 +238,8 @@ class Page extends Model
         'name' => 'name',
         'label' => 'label',
         'contents' => 'contents',
+        'status' => 'status',
+        'image_url' => 'image', 
         'meta_title' => 'meta title',
         'meta_keyword' => 'meta keywords',
         'meta_description' => 'meta description',

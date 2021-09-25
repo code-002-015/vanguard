@@ -6,22 +6,9 @@
 
 @section('pagecss')
 	<link href="{{ asset('lib/bselect/dist/css/bootstrap-select.css') }}" rel="stylesheet">
-	<!-- <script src="{{ asset('lib/ckeditor/ckeditor.js') }}"></script> -->
+	<script src="{{ asset('lib/ckeditor/ckeditor.js') }}"></script>
     <link href="{{ asset('lib/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('lib/owl.carousel/assets/owl.theme.default.min.css') }}" rel="stylesheet">
-
-    <link
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-			rel="stylesheet"
-		/>
-    <link rel="stylesheet" href="{{ asset('lib/grapesjs/toastr.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('lib/grapesjs/grapes.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('lib/grapesjs/grapick.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('lib/grapesjs/grapesjs-preset-webpage.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('lib/grapesjs/tooltip.css') }}" />
-    <link rel="stylesheet" href="{{ asset('lib/grapesjs/grapesjs-plugin-filestack.css') }}" />
-    <link rel="stylesheet" href="{{ asset('lib/grapesjs/tui-color-picker.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('lib/grapesjs/tui-image-editor.min.css') }}" />
 @endsection
 
 @section('content')
@@ -109,7 +96,7 @@
                     @enderror
 
                     <div id="image_div" @if($page->has_slider()) style="display:none;" @endif>
-                        <img src="{{ old('image_url', $page->image_url) }}" height="300" width="180" id="img_temp" alt="">  <br /><br />
+                        <img src="{{ old('image_url', $page->image_url) }}" height="100" width="150" id="img_temp" alt="">  <br /><br />
                         <a href="javascript:void(0)" class="btn btn-sm btn-danger" onclick="remove_image();">Remove Image</a>
                     </div>
                 </div>
@@ -138,17 +125,9 @@
 			<div class="col-lg-12">
 				<div class="form-group">
 					<label class="d-block">Content *</label>
-
-                    <div id="gjs">
-                        @php
-                            echo html_entity_decode(old('contents', $page->contents))
-                        @endphp
-                    </div>
-
-                    <input type="hidden" name="contents" id="contents" value="{{ old('contents', $page->contents) }}">
-                    <input type="hidden" name="wysiwyg_styles" id="wysiwyg_styles">
-
-
+					<textarea name="contents" id="editor1" rows="10" cols="80" required>
+                        {{ old('contents', $page->contents) }}
+					</textarea>
                     @hasError(['inputName' => 'contents'])
                     @endhasError
                     <span class="invalid-feedback" role="alert" id="contentsRequired" style="display: none;">
@@ -200,8 +179,6 @@
 		</div>
 	</form>
 </div>
-
-
 <div class="modal fade" id="preview-banner" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content tx-14">
@@ -228,250 +205,27 @@
     <script src="{{ asset('lib/bselect/dist/js/i18n/defaults-en_US.js') }}"></script>
     <script src="{{ asset('lib/owl.carousel/owl.carousel.js') }}"></script>
     <script src="{{ asset('js/file-upload-validation.js') }}"></script>
-    <script src="{{ asset('vendor/laravel-filemanager/js/stand-alone-button-2.js') }}"></script>
-
-    <script src="{{ asset('lib/grapesjs/toastr.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/grapes.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/grapesjs-pkurg-bootstrap4-plugin.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/grapesjs-lory-slider.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/grapesjs-custom-code.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/grapesjs-touch.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/grapesjs-parser-postcss.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/grapesjs-tooltip.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/grapesjs-tui-image-editor.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/grapesjs-typed.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/grapesjs-style-bg.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/fabric.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/tui-code-snippet.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/tui-color-picker.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/tui-image-editor.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/grapesjs-style-gradient.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/grapesjs-plugin-ckeditor.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/grapesjs-plugin-export.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/grapesjs-blocks-bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('lib/grapesjs/b4bulder-custom-blocks.js') }}"></script>
-    <script src="{{ asset('lib/ckeditor/ckeditor.js') }}"></script>
-    <script src="{{ asset('lib/ckeditor/adapters/jquery.js') }}"></script>
-    <!-- <script src="{{ asset('lib/grapesjs/grapesjs-script.js') }}"></script> -->
 @endsection
 
 @section('customjs')
-    <script>
-        var editorgjs = grapesjs.init({
-        height: "100%",
-        container: "#gjs",
-        fromElement: 1,
-        showOffsets: 1,
-        noticeOnUnload: 0,
-        colorPicker: { appendTo: "parent", offset: { top: 20, left: -175 } },
-        storageManager: {
-            id: "gjs-", // Prefix identifier that will be used on parameters
-            type: "remote", //type: 'local', type: 'remote',Type of the storage
-            autosave: false, // Store data automatically
-            autoload: true, // Autoload stored data on init
-            contentTypeJson: false,
-            storeComponents: true,
-            storeStyles: true,
-            storeHtml: true,
-            storeCss: true,
-        },
-        plugins: [
-            PB4,
-            "grapesjs-custom-code",
-            "grapesjs-parser-postcss",
-            "grapesjs-tooltip",
-            "grapesjs-tui-image-editor",
-            "grapesjs-style-bg",
-            "grapesjs-style-gradient",
-            "grapesjs-plugin-ckeditor",
-            "grapesjs-plugin-export",
-            "grapesjs-blocks-bootstrap4",
-            PB4CustomBlocks,
-        ],
-        pluginsOpts: {
-            "grapesjs-blocks-bootstrap4": {
-                blocks: {
-                    image: false,
-                },
-                blockCategories: {
-                    components: false,
-                    forms: false
-                },
-            },
-            "grapesjs-tabs": {
-                tabsBlock: {
-                    category: "Extra",
-                },
-            },
-            "grapesjs-style-gradient": {},
-            "gjs-plugin-ckeditor": {
-                options: {
-                    filebrowserImageBrowseUrl: '{{ env('APP_URL') }}/laravel-filemanager?type=Images',
-                    filebrowserImageUpload: '{{ env('APP_URL') }}/laravel-filemanager/upload?type=Images&_token={{ csrf_token() }}',
-                    filebrowserBrowseUrl: '{{ env('APP_URL') }}/laravel-filemanager?type=Files',
-                    filebrowserUploadUrl: '{{ env('APP_URL') }}/laravel-filemanager/upload?type=Files&_token={{ csrf_token() }}',
-                    allowedContent: true,
-                    language: "en",
-                },
-            },
-        },
-        canvas: {
-            styles: [
-                '{{ env('APP_URL') }}/theme/sysu/css/bootstrap.css',
-                '{{ env('APP_URL') }}/theme/sysu/css/style-vars.css',
-                '{{ env('APP_URL') }}/theme/sysu/css/dark.css',
-                '{{ env('APP_URL') }}/theme/sysu/css/font-icons.css',
-                '{{ env('APP_URL') }}/theme/sysu/css/et-line.css',
-                '{{ env('APP_URL') }}/theme/sysu/css/animate.css',
-                '{{ env('APP_URL') }}/theme/sysu/css/magnific-popup.css',
-                '{{ env('APP_URL') }}/theme/sysu/include/cookie-alert/cookiealert.css',
-                '{{ env('APP_URL') }}/theme/sysu/include/slick/slick.css',
-                '{{ env('APP_URL') }}/theme/sysu/include/slick/slick-theme.css',
-                '{{ env('APP_URL') }}/theme/sysu/css/responsive.css',
-                '{{ env('APP_URL') }}/theme/sysu/css/custom.css'
-            ],
-            scripts: [
-                '{{ env('APP_URL') }}/theme/sysu/js/jquery.js',
-                '{{ env('APP_URL') }}/theme/sysu/js/plugins.js',
-                '{{ env('APP_URL') }}/theme/sysu/include/slick/slick.js',
-                '{{ env('APP_URL') }}/theme/sysu/include/cookie-alert/cookiealert.js',
-                '{{ env('APP_URL') }}/theme/sysu/js/functions.js',
-            ],
-        },
-    });
-
-    editorgjs.I18n.addMessages({
-        en: {
-            styleManager: {
-                properties: {
-                    "background-repeat": "Repeat",
-                    "background-position": "Position",
-                    "background-attachment": "Attachment",
-                    "background-size": "Size",
-                },
-            },
-        },
-    });
-
-    var pn = editorgjs.Panels;
-    var modal = editorgjs.Modal;
-    var cmdm = editorgjs.Commands;
-
-    cmdm.add("update-page", {
-        run: function (em, sender) {
-            sender.set("active", true);
-            updateContent();
-        },
-    });
-
-    editorgjs.StyleManager.addProperty("decorations", {
-        name: "Gradient",
-        property: "background-image",
-        type: "gradient",
-        defaults: "none",
-    });
-
-    // Simple warn notifier
-    var origWarn = console.warn;
-    toastr.options = {
-        closeButton: true,
-        preventDuplicates: true,
-        showDuration: 250,
-        hideDuration: 150,
-    };
-    console.warn = function (msg) {
-        if (msg.indexOf("[undefined]") == -1) {
-            toastr.warning(msg);
-        }
-        origWarn(msg);
-    };
-
-    var titles = document.querySelectorAll("*[title]");
-
-    for (var i = 0; i < titles.length; i++) {
-        var el = titles[i];
-        var title = el.getAttribute("title");
-        title = title ? title.trim() : "";
-        if (!title) break;
-        el.setAttribute("data-tooltip", title);
-        el.setAttribute("title", "");
-    }
-
-    // Add and beautify tooltips
-
-    [
-        ["sw-visibility", "Show Borders"],
-        ["preview", "Preview"],
-        ["fullscreen", "Fullscreen"],
-        ["export-template", "View Code"],
-        ["undo", "Undo"],
-        ["redo", "Redo"],
-    ].forEach(function (item) {
-        pn.getButton("options", item[0]).set("attributes", {
-            title: item[1],
-            "data-tooltip": item[1],
-            "data-tooltip-pos": "bottom",
-        });
-    });
-
-    [
-        ["open-sm", "Style Manager"],
-        ["open-tm", "Trait Manager"],
-        ["open-layers", "Layers"],
-        ["open-blocks", "Blocks"],
-    ].forEach(function (item) {
-        pn.getButton("views", item[0]).set("attributes", {
-            title: item[1],
-            "data-tooltip": item[1],
-            "data-tooltip-pos": "bottom",
-        });
-    });
-
-    // Show borders by default
-    pn.getButton("options", "sw-visibility").set("active", 1);
-
-    // Do stuff on load
-    editorgjs.on("load", function () {
-        var $ = grapesjs.$;
-
-        // Load and show settings and style manager
-        var openBlkBtn = pn.getButton("views", "open-blocks");
-        openBlkBtn && openBlkBtn.set("active", 1);
-    });
-
-    editorgjs.on('component:update', () => { 
-        $('#contents').val(editorgjs.getHtml());
-    });
-
-    editorgjs.on('component:styleUpdate', () => { 
-        $("#wysiwyg_styles").val(editorgjs.getCss());
-    });
-
-    //media assets
-    cmdm.add('open-assets', {
-        run(editor, sender, opts = {}) {
-            var type = "image";
-            var route_prefix = "{{ url(config('lfm.url_prefix', config('lfm.prefix'))) }}";
-            var target = $("#" + opts.target.ccid);
-            window.open(
-                route_prefix + "?type=" + type,
-                "FileManager",
-                "width=900,height=600"
-            );
-            window.SetUrl = function (url) {
-                var img = new Image();
-                img.onload = function () {
-                    opts.target.set('src', url);
-			        const fakeAsset = { get: () => url };
-			        opts.onSelect(fakeAsset);
-                };
-                img.src = url;
-            };
-            return false;
-        }
-    });
-    </script>
 	<script>
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        var options = {
+            filebrowserImageBrowseUrl: '{{ env('APP_URL') }}/laravel-filemanager?type=Images',
+            filebrowserImageUpload: '{{ env('APP_URL') }}/laravel-filemanager/upload?type=Images&_token={{ csrf_token() }}',
+            filebrowserBrowseUrl: '{{ env('APP_URL') }}/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '{{ env('APP_URL') }}/laravel-filemanager/upload?type=Files&_token={{ csrf_token() }}',
+            allowedContent: true,
+        };
+        let editor = CKEDITOR.replace('contents', options);
+        editor.on('required', function (evt) {
+            if ($('.invalid-feedback').length == 1) {
+                $('#contentsRequired').show();
+            }
+            $('#cke_editor1').addClass('is-invalid');
+            evt.cancel();
+        });
 
         function has_none_option(objectId, currentValue)
         {
