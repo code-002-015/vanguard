@@ -10,26 +10,30 @@
 
     if ($featuredArticles->count()) {
 
-        $featuredArticlesHTML = '';
+        $featuredArticlesHTML = '<section class="position-relative" id="section-news">
+                                    <div class="content-wrap pb-0" style="z-index:2">
+                                        <div class="container">
+                                            <h6 class="mb-2 ls5 text-uppercase text-secondary text-center">News and Updates</h6>
+                                            <h2 class="mb-4 text-center">Latest News</h2>
+
+                                            <div class="row mb-5">';
         foreach ($featuredArticles as $index => $article) {
             $imageUrl = (empty($article->thumbnail_url)) ? asset('theme/'.env('FRONTEND_TEMPLATE').'/images/misc/no-image.jpg') : $article->thumbnail_url;
 
+
+
             
-            $featuredArticlesHTML .= '<div class="oc-item home-news shadow-sm rounded overflow-hidden text-center">
-                <div class="ipost clearfix">
-                    <div class="entry-image m-0">
-                        <a href="'. $article->get_url() .'" data-lightbox="image">
-                            <img class="image_fade" src="'. $imageUrl .'" alt="Card image cap">
-                        </a>
-                    </div>
-                    <div class="entry-title pt-4 px-2">
-                        <h3><a href="'. $article->get_url() .'">'. $article->name .'</a></h3>
-                    </div>
-                    <ul class="entry-meta clearfix d-flex justify-content-center pb-4">
-                        <li><i class="icon-calendar3"></i> '. $article->date_posted() .'</li>
-                    </ul>
-                </div>
-            </div>';
+            $featuredArticlesHTML .= '<div class="col-lg-4 mb-5 mb-lg-0">
+                                        <div class="card rounded-20px">
+                                            <img class="card-img-top rounded-top-20px" src="'. $imageUrl .'" alt="Card image cap">
+                                            <div class="card-body p-4">
+                                                <p class="card-text mb-2"><small class="text-muted">Posted on '. $article->date_posted() .'</small></p>
+                                                <h4 class="card-title excerpt-1">'. $article->name .'</h4>
+                                                <p class="card-text excerpt-2">'. $article->teaser .'</p>
+                                                <a href="'. $article->get_url() .'" class="button button-custom button-large nomargin clearfix">Read More <i class="icon-circle-arrow-right ml-2 mr-0"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>';
 
             if (\App\Article::has_featured_limit() && $index >= env('FEATURED_NEWS_LIMIT')) {
                 break;
