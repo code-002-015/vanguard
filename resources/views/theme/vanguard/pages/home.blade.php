@@ -17,6 +17,9 @@
                                             <h2 class="mb-4 text-center">Latest News</h2>
 
                                             <div class="row mb-5">';
+
+        $prefooter = asset('theme/'.env('FRONTEND_TEMPLATE').'/images/pre-footer.jpg');
+
         foreach ($featuredArticles as $index => $article) {
             $imageUrl = (empty($article->thumbnail_url)) ? asset('theme/'.env('FRONTEND_TEMPLATE').'/images/misc/no-image.jpg') : $article->thumbnail_url;
 
@@ -39,7 +42,7 @@
         }
 
         $featuredArticlesHTML .= '</div>
-                        <img class="d-block mx-auto pt-5" src="{{ asset('theme/'.env('THEME_FOLDER').'/images/pre-footer.jpg') }}" alt="">
+                        <img class="d-block mx-auto pt-5" src="'. $prefooter .'" alt="">
                     </div>
                 </div>          
             </section>';
