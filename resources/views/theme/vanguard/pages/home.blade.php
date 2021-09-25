@@ -39,7 +39,7 @@
         }
 
         $featuredArticlesHTML .= '</div>
-                        <img class="d-block mx-auto pt-5" src="images/pre-footer.jpg" alt="">
+                        <img class="d-block mx-auto pt-5" src="{{ asset('theme/'.env('THEME_FOLDER').'/images/pre-footer.jpg') }}" alt="">
                     </div>
                 </div>          
             </section>';
