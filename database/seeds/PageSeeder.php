@@ -14,273 +14,271 @@ class PageSeeder extends Seeder
         $faker = \Faker\Factory::create();
 
         $homeHTML = '
-            <div class="content-wrap">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-12">
-                  <div class="hero-headline bottommargin">
-                    <h1>Web<span class="themecolor">Focus</span> Solutions, Inc. is the leading web development company in the Philippines since 2001</h1>
-                    <span>WebFocus Solutions, Inc. is the leading provider of IT Solutions in the Philippines. We have enthusiastically served more than 1,600 clients, and the number keeps on growing.</span>
-                  </div>
-
-                  <a href="#" data-scrollto="#section-contact" data-easing="easeInOutExpo" data-speed="1250" data-offset="60" class="button button-dark button-black nomargin">Get Custom Quote</a>
-
-                  <div class="line topmargin-lg bottommargin-lg"></div>
-                </div>
-
-                <div class="col-md-10">
-                  <div class="heading-block">
-                    <h2>Services</h2>
-                    <span>As a key player in the IT industry, we have proven that our services work and sell. With that, we have expanded our horizon in order to meet the needs and demands of our clients.</span>             
-                  </div>
-                </div>
-
-                <div class="col-lg-6 bottommargin">
-                  <div class="feature-box fbox-plain fbox-dark">
-                    <div class="fbox-icon">
-                      <a href="#"><i class="icon-et-desktop themecolor"></i></a>
-                    </div>
-                    <h3>Domain</h3>
-                    <p>We can help you elevate your business online, and there is no better way to start than choosing your domain name, one that is unique and fully represents your business.</p>
-                  </div>
-                </div>
-
-                <div class="col-lg-6 bottommargin">
-                  <div class="feature-box fbox-plain fbox-dark">
-                    <div class="fbox-icon">
-                      <a href="#"><i class="icon-et-global themecolor"></i></a>
-                    </div>
-                    <h3>Email and Web Hosting</h3>
-                    <p>We offer powerful hosting solutions that are affordable and can store websites with fully integrated Internet solutions for both small and big organizations.</p>
-                  </div>
-                </div>
-
-                <div class="col-lg-6 bottommargin">
-                  <div class="feature-box fbox-plain fbox-dark">
-                    <div class="fbox-icon">
-                      <a href="#"><i class="icon-et-megaphone themecolor"></i></a>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>Design the system, Automate the process, Transform your business. We cater a wide range of custom-built web solutions that transform business processes on the web.</p>
-                  </div>
-                </div>
-
-                <div class="col-lg-6 bottommargin">
-                  <div class="feature-box fbox-plain fbox-dark">
-                    <div class="fbox-icon">
-                      <a href="#"><i class="icon-et-tools themecolor"></i></a>
-                    </div>
-                    <h3>Document Management System</h3>
-                    <p>We are an accredited implementation partner for document management system software applications that will help your organization to create e-documents, collaboratively edit and finalize these, completely secure and share documents within the organization.</p>
-                  </div>
-                </div>
-
-                <div class="col-md-8 offset-md-2 text-center">
-                  <div class="divider divider-center"><i class="icon-like"></i></div>
-
-                  <h4>What they say about our service</h4>
-                  <div class="fslider testimonial nopadding noborder noshadow" data-animation="slide" data-arrows="false">
-                    <div class="flexslider">
-                      <div class="slider-wrap">
-                        <div class="slide">
-                          <div class="testi-content">
-                            <p>"We now have WebFocus’ Technical Support to assist us, most especially when we’re off site and out of office."</p>
-                            <div class="testi-meta">
-                              Anna Liza Fallar-Marquez, I.T. Manager
-                              <span>AirSpeed International Corporation</span>
+          <section class="position-relative" id="section-about">
+                <div class="content-wrap">
+                    <div class="container">
+                        <div class="row align-items-center mb-5">
+                            <div class="col-lg-6 pr-lg-5 mb-5 mb-lg-0">
+                                <h6 class="mb-2 ls5 text-uppercase text-secondary">Welcome to Our School</h6>
+                                <h2 class="mb-4">About Vanguard Academy</h2>
+                                <p>The Vanguard Academy is the school in Metro Manila where all students will have equitable opportunities to develop their skills, interests, and talents in preparation for their uniquely different life paths after secondary education,including tertiary education in the Philippines or abroad, assisted or fully independent part or full-time employment in small or large businesses, and varying levels of independent living.</p>
+                                <a href="contact.html" class="button button-custom button-large nomargin clearfix">Learn More <i class="icon-circle-arrow-right ml-2 mr-0"></i></a>
                             </div>
-                          </div>
-                        </div>
-                        <div class="slide">
-                          <div class="testi-content">
-                            <p>"WebFocus officers are very accommodating and they go out of their way whenever we need assistance from them especially during the first few weeks after our website launching."</p>
-                            <div class="testi-meta">
-                              Greggy Romualdez, Head of External Affairs
-                              <span>Team Energy Corporation</span>
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 pb-4 pb-lg-5">
+                                        <img class="rounded-20px mx-auto d-block" src="'.\URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/about/img-1.jpg" alt="">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 pt-lg-5">
+                                        <img class="rounded-20px mx-auto d-block" src="'.\URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/about/img-2.jpg" alt="">
+                                    </div>
+                                </div>
                             </div>
-                          </div>
                         </div>
-                        <div class="slide">
-                          <div class="testi-content">
-                            <p>"The cPanel has definitely helped us input data in our website. We are satisfied with your service. Very hands on. Your team makes sure that all requests are granted immediately."</p>
-                            <div class="testi-meta">
-                              Ms. Pauline Abello
-                              <span>Philippine Center for Environmental Protection and Sustainable Development, Inc. (PCEPSDI)</span>
+
+                    </div>
+                </div>
+                <div class="shape-divider-bottom">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="white">
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                    </svg>
+                </div>
+            </section>
+
+            <section class="position-relative" id="section-video">
+                <div class="h-192px"></div>
+                <div class="overlay"></div>
+                <div class="content-wrap">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <a class="d-block position-relative mb-5 mb-lg-0" href="https://vimeo.com/101373765" data-lightbox="iframe">
+                                    <img class="w-100" src="'.\URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/video.jpg" alt="Video">
+                                    <div class="bg-overlay">
+                                        <div class="bg-overlay-content dark">
+                                            <span class="overlay-trigger-icon size-lg op-ts bg-light text-dark animated op-07" data-hover-animate="op-1" data-hover-animate-out="op-07" data-hover-parent=".row" style="animation-duration: 600ms;"><i class="icon-play text-primary"></i></span>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                          </div>
+                            <div class="col-lg-6 pl-lg-5">
+                                <h6 class="mb-2 ls5 text-uppercase text-secondary">Watch This Out</h6>
+                                <h2 class="mb-4">Our School Video</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
                         </div>
+                    </div>
+                </div>
+                <div class="h-192px"></div>         
+            </section>
+
+            <section class="position-relative" id="section-best-practice">
+                <div class="shape-divider-top">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="white">
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                    </svg>
+                </div>
+                <div class="content-wrap" style="z-index:2">
+                    <div class="container">
+                        <h6 class="mb-2 ls5 text-uppercase text-secondary text-center">Our Student Learning</h6>
+                        <h2 class="mb-4 text-center">Best Practices</h2>
+
+                        <div class="row">
+                            <div class="col-lg-4 mb-5 mb-lg-0">
+                                <div class="card p-4 rounded-20px bg-gray text-center mb-4">
+                                    <div class="card-body">
+                                        <img src="https://via.placeholder.com/221x221" alt="">
+                                        <h3 class="mt-5 mb-0">Collaboration/Teamwork</h3>
+                                    </div>
+                                </div>
+
+                                <ul class="list-unstyled text-center">
+                                    <li class="mb-2">Celebrate successes.</li>
+                                    <li class="mb-2">Begin with the “end” in mind.</li>
+                                    <li class="mb-2">Be open and honest.</li>
+                                    <li class="mb-2">Compare and contrast ideas.</li>
+                                    <li class="mb-2">Serve one another.</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-4 mb-5 mb-lg-0">
+                                <div class="card p-4 rounded-20px bg-gray text-center mb-4">
+                                    <div class="card-body">
+                                        <img src="https://via.placeholder.com/221x221" alt="">
+                                        <h3 class="mt-5 mb-0">Instructional Strategies</h3>
+                                    </div>
+                                </div>
+
+                                <ul class="list-unstyled text-center">
+                                    <li class="mb-2">Incorporate multiple intelligences.</li>
+                                    <li class="mb-2">Use inquiry-based learning.</li>
+                                    <li class="mb-2">Exercise collaborative learning.</li>
+                                    <li class="mb-2">Encourage higher-order thinking skills.</li>
+                                    <li class="mb-2">Be child-centered.</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-4 mb-5 mb-lg-0">
+                                <div class="card p-4 rounded-20px bg-gray text-center mb-4">
+                                    <div class="card-body">
+                                        <img src="https://via.placeholder.com/221x221" alt="">
+                                        <h3 class="mt-5 mb-0">Online Learning</h3>
+                                    </div>
+                                </div>
+
+                                <ul class="list-unstyled text-center">
+                                    <li class="mb-2">Set up a conducive space.</li>
+                                    <li class="mb-2">Use age-appropriate applications.</li>
+                                    <li class="mb-2">Integrate manipulatives.</li>
+                                    <li class="mb-2">Utilize a myriad of teaching tools.</li>
+                                    <li class="mb-2">Use real-world application.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shape-divider-bottom">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="white">
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                    </svg>
+                </div>          
+            </section>
+
+            <section class="position-relative" id="section-video">
+                <div class="h-192px"></div>
+                <div class="overlay"></div>
+                <div class="content-wrap">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 pl-lg-5 mb-4 mb-lg-0">
+                                <h6 class="mb-2 ls5 text-uppercase text-secondary">Stay Connected</h6>
+                                <h2 class="mb-4">Want to Discover More?</h2>
+                                <a href="contact.html" class="button button-custom button-large nomargin clearfix">Contact Us <i class="icon-circle-arrow-right ml-2 mr-0"></i></a>
+                            </div>
+                            <div class="col-lg-6">
+                                <svg class="position-absolute mt-n5 ml-n5" style="z-index:1" width="581" height="459" viewBox="0 0 581 459" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M304.5 42.0001C402.9 -39.1999 475.833 16.8334 500 55.0001C611.6 176.6 583.833 325.333 556 384.5C523.333 423.667 417.5 489.7 255.5 440.5C53 379 4.00012 313.5 0.500123 241.5C-2.29988 183.9 72.6668 153.5 110.5 145.5C134.167 144.833 206.1 123.2 304.5 42.0001Z" fill="white" fill-opacity="0.5"/>
+                                </svg>
+                                <img class="position-relative w-100 mt-4" style="z-index: 2;" src="'.\URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/contact.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>      
+            </section>';
+
+
+        $aboutHTML = '
+          <h3 class="font-32px">About Vanguard Academy </h3>                    
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+          <p class="nobottommargin">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>';
+
+
+        $contactUsHTML = '
+            <h3>Contact Details</h3>
+            <iframe class="mb-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.6351879919657!2d121.0079802148399!3d14.562842589826564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c97529aecac7%3A0xf575bfff50902c78!2s7708%20Saint%20Paul%20Road%2C%20Village%2C%20Makati%2C%201203%20Kalakhang%20Maynila!5e0!3m2!1sen!2sph!4v1605668109563!5m2!1sen!2sph" width="100%" height="70" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+            <div class="row topmargin">
+                <div class="col-lg-6">
+                    <address>
+                        <abbr title="Address">Address:</abbr><br>
+                        444a EDSA, Guadalupe Viejo, Makati City, Philippines 1211
+                    </address>
+                </div>
+                <div class="col-lg-6">
+                    <p><abbr title="Email Address">Email:</abbr><br>info@vanguard.edu.ph</p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="nomargin"><abbr title="Phone Number">Phone:</abbr><br>(632) 8-1234-4567</p>
+                </div>
+                <div class="col-lg-6">
+                    <p class="nomargin"><abbr title="Phone Number">Fax:</abbr><br>(632) 8-1234-4567</p>
+                </div>
+            </div>';
+
+        $footerHTML = '
+          <div class="container">
+            <div class="footer-widgets-wrap clearfix">
+
+              <div class="row justify-content-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 pr-0 pr-lg-4">
+                  <div class="widget">
+                    <div class="d-block d-lg-flex justify-content-start">
+                      <img class="w-auto h-100 pr-3 mb-4" src="'.\URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/footer-logo.png" alt="">
+                      <div>
+                        <h4 class="mb-3 text-white">The Vanguard Academy is proudly presented by the Academy for Children of All Abilities Philippines (ACAAP), Inc.</h4>
+                        <ul class="list-unstyled mb-0 footer-contact">
+                          <li><i class="icon-map-marker1"></i>444a EDSA, Guadalupe Viejo,<br> Makati City, Philippines 1211</li>
+                        </ul>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="col-12">
-                  <div class="line topmargin-lg bottommargin-lg"></div>
-                </div>
-
-                <div class="col-md-10">
-                  <div class="heading-block">
-                    <h2>Why choose WebFocus?</h2>
-                    <span>It has been proven time and time again that we deliver great value for clients who acquire our I.T. services. On top of this, we bring 24/7 customer support to them the best way we can.</span>              
+                <div class="col-lg-3 mb-5 mb-lg-0">
+                  <div class="widget">
+                    <ul class="list-unstyled mb-0 footer-contact">
+                      <li><i class="icon-phone3"></i>(632) 8-1234-4567</li>
+                      <li><i class="icon-fax"></i>(632) 8-1234-4567</li>
+                      <li><i class="icon-envelope"></i>info@vanguard.edu.ph</li>
+                    </ul>
                   </div>
                 </div>
-
-                <div class="col-md-3">
-                  <img src="https://admin.webfocusprod.wsiph2.com/files/2/Others/feat1.jpg" />
-                  <h3>Customized</h3>
-                  <p>WebFocus will use the information you provide to design the solution that will perfectly match your requirements</p>
-                </div>
-                <div class="col-md-3">
-                  <img src="https://admin.webfocusprod.wsiph2.com/files/2/Others/feat2.jpg" />
-                  <h3>Modular</h3>
-                  <p>We build our solutions through a modular approach, so that you can utilize more features and functionalities</p>
-                </div>
-                <div class="col-md-3">
-                  <img src="https://admin.webfocusprod.wsiph2.com/files/2/Others/feat3.jpg" />
-                  <h3>Scalable</h3>
-                  <p>WebFocus provides scalable I.T. solutions for your business that will help you in growing smarter and faster</p>
-                </div>
-                <div class="col-md-3">
-                  <img src="https://admin.webfocusprod.wsiph2.com/files/2/Others/feat1.jpg" />
-                  <h3>Cost-Efficient</h3>
-                  <p>WebFocus wants you to invest where it matters the most. We will help you adapt and learn as you go</p>
-                </div>
-
-                <div class="col-12">            
-
-                  <div class="line topmargin-lg bottommargin-lg"></div>
-                  <div class="heading-block">
-                    <h2>Latest News</h2>
+                <div class="col-lg-3 mb-5 mb-lg-0">
+                  <div class="widget">
+                    <h4 class="mb-3 text-white">Get Connected</h4>
+                    <ul class="list-inline">
+                      <li class="list-inline-item mr-2">
+                        <a href="#" class="text-white border-white si-rounded social-icon si-facebook">
+                          <i class="icon-facebook"></i>
+                          <i class="icon-facebook"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item mr-2">
+                        <a href="#" class="text-white border-white si-rounded social-icon si-instagram">
+                          <i class="icon-instagram"></i>
+                          <i class="icon-instagram"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item mr-2">
+                        <a href="#" class="text-white border-white si-rounded social-icon si-youtube">
+                          <i class="icon-youtube"></i>
+                          <i class="icon-youtube"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" class="text-white border-white si-rounded social-icon si-linkedin">
+                          <i class="icon-linkedin-in"></i>
+                          <i class="icon-linkedin-in"></i>
+                        </a>
+                      </li>
+                    </ul>
                   </div>
-
-                  <div id="oc-posts" class="owl-carousel posts-carousel carousel-widget" data-margin="20" data-nav="true" data-pagi="true" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4">
-
-                    {Featured Articles}
-
-                  </div>
-
-                  <div class="line topmargin-lg bottommargin-lg"></div>
-
-                  <div class="heading-block">
-                    <h2>Brands weve worked with</h2>
-                  </div>
-
-                  <div id="oc-clients" class="owl-carousel image-carousel carousel-widget" data-margin="20" data-nav="false" data-pagi="true" data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="6">
-                    <div class="oc-item"><a href="#"><img src="'.\URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/clients/logo1.png" alt="Clients"></a></div>
-                    <div class="oc-item"><a href="#"><img src="'.\URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/clients/logo2.png" alt="Clients"></a></div>
-                    <div class="oc-item"><a href="#"><img src="'.\URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/clients/logo3.png" alt="Clients"></a></div>
-                    <div class="oc-item"><a href="#"><img src="'.\URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/clients/logo4.png" alt="Clients"></a></div>
-                    <div class="oc-item"><a href="#"><img src="'.\URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/clients/logo5.png" alt="Clients"></a></div>
-                    <div class="oc-item"><a href="#"><img src="'.\URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/clients/logo6.png" alt="Clients"></a></div>
-                    <div class="oc-item"><a href="#"><img src="'.\URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/clients/logo7.png" alt="Clients"></a></div>
-                    <div class="oc-item"><a href="#"><img src="'.\URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/clients/logo8.png" alt="Clients"></a></div>
-                    <div class="oc-item"><a href="#"><img src="'.\URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/clients/logo9.png" alt="Clients"></a></div>
-                    <div class="oc-item"><a href="#"><img src="'.\URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/clients/logo10.png" alt="Clients"></a></div>
-                  </div>
-
                 </div>
-
+                <div class="col-lg-12 mt-4">
+                  <p class="card-text"><small class="text-white">Copyright © 2019 - 2021. All Rights Reserved.</small></p>
+                </div>
               </div>
-            </div>
-          </div>';
 
-        $aboutHTML = '
-          <div class="content-wrap">
-            <div class="container-fluid">
-              <div class="row">
+              <div class="row justify-content-center mt-5 d-none">
                 <div class="col-lg-12">
-                  <div class="heading-block">
-                    <h3>About us with banner image</h3>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis.</p>
+                  <p><small class="text-white">Posted on Sept 6, 2021</small></p>
                 </div>
               </div>
             </div>
-          </div>';
-
-
-
-        $contactUsHTML = '
-            <div class="col-lg-6">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1930.7395283445844!2d121.0487146566528!3d14.571756989820798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8448f1f3569%3A0xf50b5ce937fcfc83!2sGlobe%20Telecom%20Plaza!5e0!3m2!1sen!2sph!4v1612285065708!5m2!1sen!2sph" width="100%" height="500" frameborder="1" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="pb-4"></iframe>
-
-              <address>
-                <strong>Head Office:</strong><br>
-                Unit 721 7F Globe Telecom Plaza II Pioneer Highlands Condo Pioneer St Barangka Ilaya Mandaluyong City 1550 Philippines
-              </address>
-
-              <div class="row"><br>
-                <div class="col-md-6">
-                  <address>
-                    <strong>Lilo-an Cebu Office:</strong><br>
-                    Purok Molave, Tayud, Lilo-an Cebu
-                  </address>
-                </div>
-                <div class="col-md-6">
-                  <address>
-                    <strong>Cavite Plant:</strong><br>
-                    Brgy. Osorio, Trece Martires City, Cavite
-                  </address>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6">
-                  <abbr title="Phone Number"><strong>Phone:</strong><br>
-                  </abbr> (02) 8687-4982<br>
-                  (02) 8687-5123 to 30<br>
-                  <br>
-                  <abbr title="Fax"><strong>Fax:</strong><br>
-                  </abbr> (02) 8687-1410<br>
-                </div>
-
-                <div class="col-md-6">
-                  <abbr title="Mobile"><strong>Mobile:</strong><br>
-                  </abbr> +63917 598 8518<br>
-                  <br>
-                  <abbr title="Email Address"><strong>Email:</strong><br>
-                  </abbr> sales@nffic.com.ph<br>
-                  marketing@nffic.com.ph
-                </div>
-              </div>
-
-              <div class="noborder notoppadding mt-4">
-                <strong>Social Media:</strong><br>
-                <a href="#" class="social-icon si-small si-dark si-facebook">
-                  <i class="icon-facebook"></i>
-                  <i class="icon-facebook"></i>
-                </a>
-
-                <a href="#" class="social-icon si-small si-dark si-twitter">
-                  <i class="icon-twitter"></i>
-                  <i class="icon-twitter"></i>
-                </a>
-
-                <a href="#" class="social-icon si-small si-dark si-linkedin">
-                  <i class="icon-linkedin"></i>
-                  <i class="icon-linkedin"></i>
-                </a>
-
-              </div>
-            </div>';
-
-        $footerHTML = '
-        <div id="copyrights" style="background-color:#111;">
-          <div class="container-fluid">
-
-            Copyrights &copy; Canvas 2015 | All Rights Reserved
-
           </div>
-        </div>';
+
+          <div id="copyrights">
+            <div class="container clearfix">
+              <p class="text-center mb-0"><small class="text-white">Powered by WebFocus Solutions, Inc.</small></p>
+            </div>
+          </div>';
 
       
         $pages = [
             [
                 'parent_page_id' => 0,
-                'album_id' => 0,
+                'album_id' => 1,
                 'slug' => 'home',
                 'name' => 'Home',
                 'label' => 'Home',
@@ -305,7 +303,7 @@ class PageSeeder extends Seeder
                 'contents' => $aboutHTML,
                 'status' => 'PUBLISHED',
                 'page_type' => 'standard',
-                'image_url' => \URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/banners/sub/image1.jpg',
+                'image_url' => \URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/subbanner.jpg',
                 'meta_title' => 'About Us',
                 'meta_keyword' => 'About Us',
                 'meta_description' => 'About Us page',
@@ -324,7 +322,7 @@ class PageSeeder extends Seeder
                 'contents' => $contactUsHTML,
                 'status' => 'PUBLISHED',
                 'page_type' => 'standard',
-                'image_url' => \URL::to('/').'/theme/'.env('THEME_FOLDER').'/images/banners/sub/image1.jpg',
+                'image_url' => '',
                 'meta_title' => 'Contact Us',
                 'meta_keyword' => 'Contact Us',
                 'meta_description' => 'Contact Us page',
@@ -337,8 +335,8 @@ class PageSeeder extends Seeder
                 'parent_page_id' => 0,
                 'album_id' => 0,
                 'slug' => 'news',
-                'name' => 'News',
-                'label' => 'News',
+                'name' => 'News and Updates',
+                'label' => 'News and Updates',
                 'contents' => '',
                 'status' => 'PUBLISHED',
                 'page_type' => 'customize',

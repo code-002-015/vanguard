@@ -99,36 +99,4 @@
             </ul>
         </li>
     @endif
-
-    @if (auth()->user()->has_access_to_route('careers.index') || auth()->user()->has_access_to_route('careers.applicants') || auth()->user()->has_access_to_route('careers.create') || auth()->user()->has_access_to_route('career-categories.index') || auth()->user()->has_access_to_route('career-categories.create'))
-
-        <li class="nav-label mg-t-25">E-Commerce</li>
-
-        @if (auth()->user()->has_access_to_route('careers.applicants') || auth()->user()->has_access_to_route('careers.index') || auth()->user()->has_access_to_route('careers.create') || auth()->user()->has_access_to_route('career-categories.index') || auth()->user()->has_access_to_route('career-categories.create'))
-            <li class="nav-item with-sub @if (request()->routeIs('careers*') || request()->routeIs('career-categories*')) active show @endif">
-                <a href="" class="nav-link"><i data-feather="edit"></i> <span>Careers</span></a>
-                <ul>
-                    @if(auth()->user()->has_access_to_route('careers.applicants'))
-                        <li @if (\Route::current()->getName() == 'careers.applicants') class="active" @endif><a href="{{ route('careers.applicants') }}">Manage Applicants</a></li>
-                    @endif
-
-                    @if(auth()->user()->has_access_to_route('careers.index'))
-                        <li @if (\Route::current()->getName() == 'careers.index' || \Route::current()->getName() == 'careers.edit'  || \Route::current()->getName() == 'careers.index.advance-search') class="active" @endif><a href="{{ route('careers.index') }}">Manage Careers</a></li>
-                    @endif
-
-                    @if(auth()->user()->has_access_to_route('careers.create'))
-                        <li @if (\Route::current()->getName() == 'careers.create') class="active" @endif><a href="{{ route('careers.create') }}">Create a Career</a></li>
-                    @endif
-
-                    @if(auth()->user()->has_access_to_route('career-categories.index'))
-                        <li @if (\Route::current()->getName() == 'career-categories.index' || \Route::current()->getName() == 'career-categories.edit') class="active" @endif><a href="{{ route('career-categories.index') }}">Manage Categories</a></li>
-                    @endif
-
-                    @if(auth()->user()->has_access_to_route('career-categories.create'))
-                        <li @if (\Route::current()->getName() == 'career-categories.create') class="active" @endif><a href="{{ route('career-categories.create') }}">Create a Category</a></li>
-                    @endif
-                </ul>
-            </li>
-        @endif
-    @endif
 </ul>

@@ -96,7 +96,7 @@
                     @endhasError
                     @if ($album->id == 1)
                         <p class="tx-10">
-                            Required image dimension: {{ env('MAIN_BANNER_WIDTH') }}px by {{ env('MAIN_BANNER_HEIGHT') }}px <br /> Maximum file size: 1MB <br /> Required file type: .jpeg .png
+                            Required image dimension: {{ env('MAIN_BANNER_WIDTH') }}px by {{ env('MAIN_BANNER_HEIGHT') }}px <br /> Maximum file size: 2MB <br /> Required file type: .jpeg .png
                         </p>
                     @else
                         <p class="tx-10">
@@ -291,7 +291,7 @@
                 // validate_images(evt, upload_image);
 
                 let files = evt.target.files;
-                let maxSize = 1;
+                let maxSize = 2;
                 let validateFileTypes = ["image/jpeg", "image/png"];
                 let requiredWidth = "{{ env('SUB_BANNER_WIDTH') }}";
                 let requiredHeight =  "{{ env('SUB_BANNER_HEIGHT') }}";
