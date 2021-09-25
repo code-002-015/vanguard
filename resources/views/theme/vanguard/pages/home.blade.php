@@ -20,8 +20,6 @@
         foreach ($featuredArticles as $index => $article) {
             $imageUrl = (empty($article->thumbnail_url)) ? asset('theme/'.env('FRONTEND_TEMPLATE').'/images/misc/no-image.jpg') : $article->thumbnail_url;
 
-
-
             
             $featuredArticlesHTML .= '<div class="col-lg-4 mb-5 mb-lg-0">
                                         <div class="card rounded-20px">
@@ -39,6 +37,12 @@
                 break;
             }
         }
+
+        $featuredArticlesHTML .= '</div>
+                        <img class="d-block mx-auto pt-5" src="images/pre-footer.jpg" alt="">
+                    </div>
+                </div>          
+            </section>';
 
         $contents = str_replace('{Featured Articles}', $featuredArticlesHTML, $contents);
 
