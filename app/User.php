@@ -334,6 +334,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email' => 'email',
         'firstname' => 'firstname',
         'lastname' => 'lastname',
+        'avatar' => 'avatar',
         'role_id' => 'role',
         'is_active' => 'status'
 
