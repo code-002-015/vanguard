@@ -1,8 +1,5 @@
 @extends('theme.'.env('FRONTEND_TEMPLATE').'.main')
 
-@section('pagecss')
-@endsection
-
 @section('content')
     <section id="section-content">
         <div class="content-wrap">
@@ -17,5 +14,3 @@
     </section>
 @endsection
 
-@section('pagejs')
-@endsection
