@@ -59,12 +59,12 @@
     
     <!-- Privacy Policy
     ============================================= -->
-    <!-- <div class="alert text-center cookiealert show" role="alert">
-        Do you like cookies? We use cookies to ensure you get the best experience on our website. <a href="https://cms4.webfocusprod.wsiph2.com/mccormick/public/privacy-policy" target="_blank">Learn more</a>
+    <div class="alert text-center cookiealert show" role="alert" id="popupPrivacy" style="display: none;">
+        Do you like cookies? We use cookies to ensure you get the best experience on our website. <a href="{{ route('privacy-policy') }}" target="_blank">Learn more</a>
         <button type="button" id="cookieAcceptBarConfirm" class="btn btn-primary btn-sm acceptcookies px-3" aria-label="Close">
             I agree
         </button>
-    </div> -->
+    </div>
 
     <!-- External JavaScripts
     ============================================= -->
@@ -84,6 +84,20 @@
     ============================================= -->
     <script src="{{ asset('theme/'.env('THEME_FOLDER').'/js/functions.js') }}"></script>
     <script src="{{ asset('theme/'.env('THEME_FOLDER').'/js/script.js') }}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if(localStorage.getItem('popState') != 'shown'){
+                $('#popupPrivacy').delay(1000).fadeIn();
+            }
+        });
+
+        $('#cookieAcceptBarConfirm').click(function() // You are clicking the close button
+        {
+            $('#popupPrivacy').fadeOut(); // Now the pop up is hidden.
+            localStorage.setItem('popState','shown');
+        });
+    </script>
 
     @yield('pagejs')
     
