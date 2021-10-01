@@ -28,9 +28,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Website</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Contact</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#social" role="tab" aria-controls="social" aria-selected="false">Social Media</a>
                     </li>
@@ -186,8 +186,9 @@
                                                     <option @if($media->name == 'twitter') selected @endif value="twitter">Twitter</option>
                                                     <option @if($media->name == 'instagram') selected @endif value="instagram">Instagram</option>
                                                     <option @if($media->name == 'youtube') selected @endif value="youtube">Youtube</option>
-                                                    {{--                                            <option @if($media->name == 'google') selected @endif value="google">Google</option>--}}
-                                                    {{--                                            <option @if($media->name == 'dribble') selected @endif value="dribble">Dribble</option>--}}
+                                                    <option @if($media->name == 'linkedin') selected @endif value="linkedin">LinkedIn</option>
+                                                    <option @if($media->name == 'google') selected @endif value="google">Google</option>
+                                                    {{--<option @if($media->name == 'dribble') selected @endif value="dribble">Dribble</option>--}}
                                                 </select>
                                                 &nbsp;
                                                 <input type="text" class="form-control" name="url[]" value="{{ $media->media_account }}">
@@ -204,8 +205,9 @@
                                                 <option value="twitter">Twitter</option>
                                                 <option value="instagram">Instagram</option>
                                                 <option value="youtube">Youtube</option>
-                                                {{--                                            <option value="google">Google</option>--}}
-                                                {{--                                            <option value="dribble">Dribble</option>--}}
+                                                <option value="linkedin">LinkedIn</option>
+                                                <option value="google">Google</option>
+                                                {{--<option value="dribble">Dribble</option>--}}
                                             </select>
                                             &nbsp;
                                             <input type="text" class="form-control" name="url[]" placeholder="URL">
