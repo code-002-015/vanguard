@@ -74,7 +74,7 @@
     <!-- Privacy Policy
     ============================================= -->
     <div class="alert text-center cookiealert show" role="alert" id="popupPrivacy" style="display: none;">
-        Do you like cookies? We use cookies to ensure you get the best experience on our website. <a href="{{ route('privacy-policy') }}" target="_blank">Learn more</a>
+         {!! \Setting::info()->data_privacy_popup_content !!} <a href="{{ route('privacy-policy') }}" target="_blank">Learn more</a>
         <button type="button" id="cookieAcceptBarConfirm" class="btn btn-primary btn-sm acceptcookies px-3" aria-label="Close">
             I agree
         </button>
