@@ -18,12 +18,12 @@
 
     <!-- Favicon
     ============================================= -->
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('theme/'.env('THEME_FOLDER').'/images/favicon.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('theme/'.env('THEME_FOLDER').'/images/favicon.png') }}" type="image/x-icon">
 
 </head>
 
-<body class="stretched">
+<body class="stretched" data-loader="6" data-loader-color="theme">
 
     <!-- Document Wrapper
     ============================================= -->
@@ -31,13 +31,15 @@
 
         @include('theme.'.env('FRONTEND_TEMPLATE').'.layout.header')
 
-        <section id="slider" class="slick-wrapper clearfix">
+        @include('theme.'.env('FRONTEND_TEMPLATE').'.layout.banner')
+        
+        {{--<section id="slider" class="slick-wrapper clearfix">
             <div class="banner-wrapper">
                 <div class="container-fluid">
                     @include('theme.'.env('FRONTEND_TEMPLATE').'.layout.banner')
                 </div>
             </div>
-        </section>
+        </section>--}}
 
 
         <!-- Content
