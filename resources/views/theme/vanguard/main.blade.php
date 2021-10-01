@@ -14,7 +14,19 @@
 
     <!-- Document Title
     ============================================= -->
-    <title>Vanguard Academy</title>
+    @if (isset($page->name) && $page->name == 'Home')
+        <title>{{ Setting::info()->company_name }}</title>
+    @else
+        <title>{{ (empty($page->meta_title) ? $page->name:$page->meta_title) }} | {{ Setting::info()->company_name }}</title>
+    @endif
+
+    @if(!empty($page->meta_description))
+        <meta name="description" content="{{ $page->meta_description }}">
+    @endif
+
+    @if(!empty($page->meta_keyword))
+        <meta name="keywords" content="{{ $page->meta_keyword }}">
+    @endif
 
     <!-- Favicon
     ============================================= -->
@@ -32,7 +44,7 @@
         @include('theme.'.env('FRONTEND_TEMPLATE').'.layout.header')
 
         @include('theme.'.env('FRONTEND_TEMPLATE').'.layout.banner')
-        
+
         {{--<section id="slider" class="slick-wrapper clearfix">
             <div class="banner-wrapper">
                 <div class="container-fluid">
