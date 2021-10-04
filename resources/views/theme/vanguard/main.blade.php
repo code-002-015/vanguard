@@ -14,12 +14,24 @@
 
     <!-- Document Title
     ============================================= -->
-    <title>Vanguard Academy</title>
+    @if (isset($page->name) && $page->name == 'Home')
+        <title>{{ Setting::info()->company_name }}</title>
+    @else
+        <title>{{ (empty($page->meta_title) ? $page->name:$page->meta_title) }} | {{ Setting::info()->company_name }}</title>
+    @endif
+
+    @if(!empty($page->meta_description))
+        <meta name="description" content="{{ $page->meta_description }}">
+    @endif
+
+    @if(!empty($page->meta_keyword))
+        <meta name="keywords" content="{{ $page->meta_keyword }}">
+    @endif
 
     <!-- Favicon
     ============================================= -->
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('theme/'.env('THEME_FOLDER').'/images/favicon.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('theme/'.env('THEME_FOLDER').'/images/favicon.png') }}" type="image/x-icon">
 
 </head>
 
@@ -53,12 +65,12 @@
     
     <!-- Privacy Policy
     ============================================= -->
-    <!-- <div class="alert text-center cookiealert show" role="alert">
-        Do you like cookies? We use cookies to ensure you get the best experience on our website. <a href="https://cms4.webfocusprod.wsiph2.com/mccormick/public/privacy-policy" target="_blank">Learn more</a>
+    <div class="alert text-center cookiealert show" role="alert" id="popupPrivacy" style="display: none;">
+         {!! \Setting::info()->data_privacy_popup_content !!} <a href="{{ route('privacy-policy') }}" target="_blank">Learn more</a>
         <button type="button" id="cookieAcceptBarConfirm" class="btn btn-primary btn-sm acceptcookies px-3" aria-label="Close">
             I agree
         </button>
-    </div> -->
+    </div>
 
     <!-- External JavaScripts
     ============================================= -->
@@ -78,6 +90,20 @@
     ============================================= -->
     <script src="{{ asset('theme/'.env('THEME_FOLDER').'/js/functions.js') }}"></script>
     <script src="{{ asset('theme/'.env('THEME_FOLDER').'/js/script.js') }}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if(localStorage.getItem('popState') != 'shown'){
+                $('#popupPrivacy').delay(1000).fadeIn();
+            }
+        });
+
+        $('#cookieAcceptBarConfirm').click(function() // You are clicking the close button
+        {
+            $('#popupPrivacy').fadeOut(); // Now the pop up is hidden.
+            localStorage.setItem('popState','shown');
+        });
+    </script>
 
     @yield('pagejs')
     

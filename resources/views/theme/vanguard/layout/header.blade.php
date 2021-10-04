@@ -22,10 +22,13 @@
                         <div class="header-socials d-flex font-weight-bold">
                             <span class="mr-3">Find our latest updates:</span>
                             <ul class="list-inline">
-                                <li class="list-inline-item mr-3"><a class="text-primary" href="https://www.facebook.com/"><i class="icon-facebook1"></i></a></li>
-                                <li class="list-inline-item mr-3"><a class="text-primary" href="https://instagram.com/"><i class="icon-instagram"></i></a></li>
-                                <li class="list-inline-item mr-3"><a class="text-primary" href="https://twitter.com/"><i class="icon-youtube"></i></a></li>
-                                <li class="list-inline-item"><a class="text-primary" href="https://linkedin.com/"><i class="icon-linkedin"></i></a></li>
+                                @php 
+                                    $socmed = \App\MediaAccounts::all();
+                                @endphp
+
+                                @foreach($socmed as $media)
+                                    <li class="list-inline-item mr-3"><a class="text-primary" href="{{$media->media_account}}" target="_blank"><i class="icon-{{$media->name}}"></i></a></li>
+                                @endforeach
                             </ul>                   
                         </div>
                         <div id="top-search" class="header-misc-icon">

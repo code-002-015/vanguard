@@ -28,9 +28,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Website</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Contact</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#social" role="tab" aria-controls="social" aria-selected="false">Social Media</a>
                     </li>
@@ -47,21 +47,21 @@
                                 <div class="form-group">
                                     <div id="company" class="parsley-input">
                                         <label>Company Name <span class="tx-danger">*</span></label>
-                                        <input type="text" name="company_name" data-toggle="tooltip" data-placement="right" data-title="The company name will appear at the footer of your website" class="form-control" value="{{ old('company_name',$web->company_name) }}" data-parsley-class-handler="#company" required @htmlValidationMessage({{__('standard.empty_all_field')}})>
+                                        <input type="text" name="company_name" data-toggle="tooltip" data-placement="right" data-title="The company name will appear at the footer of your website" class="form-control" value="{{ old('company_name',$web->company_name) }}" data-parsley-class-handler="#company" required @htmlValidationMessage({{__('standard.empty_all_field')}}) maxlength="150">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div id="website" class="parsley-input">
                                         <label>Website Name <span class="tx-danger">*</span></label>
-                                        <input type="text" name="website_name" data-toggle="tooltip" data-placement="right" data-title="The website name will appear at the login page of your CMS" class="form-control" value="{{ old('website_name',$web->website_name) }}" data-parsley-class-handler="#website" required @htmlValidationMessage({{__('standard.empty_all_field')}})>
+                                        <input type="text" name="website_name" data-toggle="tooltip" data-placement="right" data-title="The website name will appear at the login page of your CMS" class="form-control" value="{{ old('website_name',$web->website_name) }}" data-parsley-class-handler="#website" required @htmlValidationMessage({{__('standard.empty_all_field')}}) maxlength="150">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div id="copyright" class="parsley-input">
                                         <label>Copyright year <span class="tx-danger">*</span></label>
-                                        <input required type="text" name="copyright" class="form-control" data-parsley-class-handler="#copyright" value="{{ old('copyright',$web->copyright) }}" @htmlValidationMessage({{__('standard.empty_all_field')}})>
+                                        <input required type="text" name="copyright" class="form-control" data-parsley-class-handler="#copyright" value="{{ old('copyright',$web->copyright) }}" @htmlValidationMessage({{__('standard.empty_all_field')}}) maxlength="150">
                                     </div>
                                 </div>
 
@@ -186,8 +186,9 @@
                                                     <option @if($media->name == 'twitter') selected @endif value="twitter">Twitter</option>
                                                     <option @if($media->name == 'instagram') selected @endif value="instagram">Instagram</option>
                                                     <option @if($media->name == 'youtube') selected @endif value="youtube">Youtube</option>
-                                                    {{--                                            <option @if($media->name == 'google') selected @endif value="google">Google</option>--}}
-                                                    {{--                                            <option @if($media->name == 'dribble') selected @endif value="dribble">Dribble</option>--}}
+                                                    <option @if($media->name == 'linkedin') selected @endif value="linkedin">LinkedIn</option>
+                                                    <option @if($media->name == 'google') selected @endif value="google">Google</option>
+                                                    {{--<option @if($media->name == 'dribble') selected @endif value="dribble">Dribble</option>--}}
                                                 </select>
                                                 &nbsp;
                                                 <input type="text" class="form-control" name="url[]" value="{{ $media->media_account }}">
@@ -204,8 +205,9 @@
                                                 <option value="twitter">Twitter</option>
                                                 <option value="instagram">Instagram</option>
                                                 <option value="youtube">Youtube</option>
-                                                {{--                                            <option value="google">Google</option>--}}
-                                                {{--                                            <option value="dribble">Dribble</option>--}}
+                                                <option value="linkedin">LinkedIn</option>
+                                                <option value="google">Google</option>
+                                                {{--<option value="dribble">Dribble</option>--}}
                                             </select>
                                             &nbsp;
                                             <input type="text" class="form-control" name="url[]" placeholder="URL">
