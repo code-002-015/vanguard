@@ -80,7 +80,7 @@
                                     <button class="btn filter" type="button"><i data-feather="search"></i></button>
                                 </div>
                                 @if(\App\ViewPermissions::check_permission(Auth::user()->role_id,'admin/permission/create') == 1)
-                                    <a class="btn btn-primary btn-sm mg-b-5" href="{{ route('permission.create') }}">Create a Permission</a>
+                                    <a class="btn btn-primary btn-sm mg-b-5 mt-lg-0 mt-md-0 mt-sm-0 mt-1" href="{{ route('permission.create') }}">Create a Permission</a>
                                 @endif
                             </form>
                         </div>
@@ -111,7 +111,7 @@
                                                 <a class="nav-link" href="{{route('permission.restore',$permission->id)}}" title="Restore this permission"><i data-feather="rotate-ccw"></i></a>
                                             </nav>
                                         @else
-                                            <nav class="nav table-options justify-content-end">
+                                            <nav class="nav table-options justify-content-end flex-nowrap">
                                                 @if(\App\ViewPermissions::check_permission(Auth::user()->role_id,'admin/permission/edit') == 1)
                                                     <a href="{{ route('permission.edit',$permission->id) }}" class="nav-link"><i data-feather="edit"></i></a>
                                                 @endif

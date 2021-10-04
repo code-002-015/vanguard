@@ -117,14 +117,13 @@
 }
 
 .side-menu ul li > a div {
-  padding: 0 50px 0 15px;
+  padding: 9px 50px 9px 15px;
 }
 
 .side-menu ul li > a {
   display: block;
   text-transform: capitalize;
   color: #0e1317;
-  padding: 7px 0;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   -webkit-transition: all 0.2s ease-in-out;
@@ -133,7 +132,7 @@
   font-weight: var(--primary-menu-font-weight);
   letter-spacing: var(--primary-menu-font-spacing);
   text-transform: none;
-  line-height: 2.5;
+  line-height: 1.5;
 }
 
 .side-menu ul li.active > a div:after {
@@ -151,20 +150,23 @@
 }
 
 .side-menu ul li > a div:after {
-  content: "";
-  position: absolute;
-  width: 3px;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  transition: all ease-in-out .3s;
-  transform: translateX(-100%);
+  content: '';
+	position: absolute;
+	z-index: -1;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	opacity: 0.3;
+	transform: scale3d(0,1,1);
+	transform-origin: 0% 50%;
+	transition: transform 0.5s;
+	transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+  background: white;
 }
 
 .side-menu ul li:hover > a div:after {
-  transform: translateX(0);
-  background-color: #ccc;
+  transform: scale3d(1,1,1);
 }
 
 // .side-menu ul li:hover > a {
@@ -189,12 +191,11 @@
 }
 
 .side-menu ul ul li > a div {
-  padding: 0 50px 0 30px;
+  padding: 9px 50px 9px 30px;
 }
 
 .side-menu ul ul li > a {
   background-color: transparent;
-  padding: 7px 0;
   font-size: var(--primary-menu-font-size);
   font-weight: var(--primary-menu-font-weight);
   letter-spacing: var(--primary-menu-font-spacing);
@@ -206,11 +207,11 @@
 // }
 
 .side-menu ul ul li ul li > a div {
-  padding: 0 50px 0 45px;
+  padding: 9px 50px 9px 45px;
 }
 
 .side-menu ul ul li ul li > a {
-  padding: 7px 0;
+  // padding: 7px 0;
 }
 
 .side-menu ul ul li ul li ul li > a {
@@ -219,8 +220,8 @@
 
 .side-menu .dropdown-append {
   width: 49px;
-  height: 49px;
-  line-height: 49px;
+  height: 39px;
+  line-height: 39px;
   position: absolute;
   top: 0;
   right: 0;
@@ -230,7 +231,7 @@
 .side-menu .dropdown-append:before, .side-menu .dropdown-append:after {
   position: absolute;
   content: "";
-  top: 24px;
+  top: 18px;
   right: 18px;
   width: 13px;
   height: 1px;

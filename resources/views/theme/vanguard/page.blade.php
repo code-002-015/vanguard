@@ -2,18 +2,22 @@
 
 @section('content')
     <section id="section-content">
+        <canvas id="canvas"></canvas>
         <div class="content-wrap">
             <div class="container clearfix position-static">
             
                 <div class="row">
-                    <span onclick="closeNav()" class="dark-curtain"></span>
-                    <div class="col-lg-12 col-md-5 col-sm-12">
-                        <span onclick="openNav()" class="button noleftmargin d-lg-none mb-4"><span class="icon-chevron-left mr-2"></span> Filter</span>
-                    </div>
+                    @if($parentPage)
+                        <span onclick="closeNav()" class="dark-curtain"></span>
+                        <div class="col-lg-12 col-md-5 col-sm-12">
+                            <span onclick="openNav()" class="button noleftmargin d-lg-none mb-4"><span class="icon-chevron-left mr-2"></span> Filter</span>
+                        </div>
+                    @endif
 
                     @if($parentPage)
                         <div class="col-lg-3">
-                            <div class="tablet-view">
+                            <div class="tablet-view py-4 px-4" data-animate="fadeInLeft">
+                                <div class="overlay rounded-20px" style="z-index:-2;"></div>
                                 <a href="javascript:void(0)" class="closebtn d-block d-lg-none" onclick="closeNav()">&times;</a>
                                 <h4 class="font-weight-bold">{{ $parentPage->name }}</h4>
                                 <div class="side-menu">

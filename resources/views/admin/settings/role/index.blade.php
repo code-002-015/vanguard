@@ -109,11 +109,11 @@
 
                                     <td>
                                         @if($role->trashed())
-                                            <nav class="nav table-options justify-content-end">
+                                            <nav class="nav table-options justify-content-end flex-nowrap">
                                                 <a class="nav-link" href="{{route('role.restore', $role->id)}}" title="Restore this page"><i data-feather="rotate-ccw"></i></a>
                                             </nav>
                                         @else
-                                            <nav class="nav table-options justify-content-end">
+                                            <nav class="nav table-options justify-content-end flex-nowrap">
                                                 @if(\App\ViewPermissions::check_permission(Auth::user()->role_id,'admin/role/edit') == 1)
                                                     <a href="{{ route('role.edit',$role->id) }}" class="nav-link"><i data-feather="edit"></i></a>
                                                 @endif

@@ -104,7 +104,7 @@
                                     <input name="search" type="search" id="search" class="form-control"  placeholder="Search by Title" value="{{ $filter->search }}">
                                     <button class="btn filter" id="btnSearch"><i data-feather="search"></i></button>
                                 </div>
-                                <a class="btn btn-success btn-sm mg-b-5" href="javascript:void(0)" data-toggle="modal" data-target="#advanceSearchModal">{{__('common.advance_search')}}</a>
+                                <a class="btn btn-success btn-sm mg-b-5 mt-lg-0 mt-md-0 mt-sm-0 mt-1" href="javascript:void(0)" data-toggle="modal" data-target="#advanceSearchModal">{{__('common.advance_search')}}</a>
                             </form>
                         </div>
                         <div class="mg-t-10">
@@ -122,7 +122,7 @@
             <div class="col-md-12">
                 <div class="table-list mg-b-10">
                     <div class="table-responsive-lg">
-                        <table class="table mg-b-0 table-light table-hover">
+                        <table class="table mg-b-0 table-light table-hover" style="width:100%;word-wrap: break-word;min-width:700px">
                             <thead>
                             <tr>
                                 <th style="width: 10%;">
@@ -155,16 +155,16 @@
                                     </td>
                                     <td>{{ $page->label }}</td>
                                     <td>{!! ($page->trashed() ? '<span class="badge badge-danger">Deleted</span>':ucfirst(strtolower($page->status))) !!}</td>
-                                    <td>{{ Setting::date_for_listing($page->updated_at) }}</td>
+                                    <td><span class="text-nowrap">{{ Setting::date_for_listing($page->updated_at) }}</span></td>
                                     <td>
                                         @if($page->trashed())
                                             @if (auth()->user()->has_access_to_route('pages.restore'))
-                                                <nav class="nav table-options justify-content-end">
+                                                <nav class="nav table-options justify-content-end flex-nowrap">
                                                     <a class="nav-link" href="{{route('pages.restore',$page->id)}}" title="Restore this page"><i data-feather="rotate-ccw"></i></a>
                                                 </nav>
                                             @endif
                                         @else
-                                            <nav class="nav table-options justify-content-end">
+                                            <nav class="nav table-options justify-content-end flex-nowrap">
                                                 @if(auth()->user()->has_access_to_route('pages.show'))
                                                     <a class="nav-link" target="_blank" href="{{ $page->get_url() }}" title="View Page"><i data-feather="eye"></i></a>
                                                 @endif
@@ -194,6 +194,7 @@
                                                 @endif
                                             </nav>
                                         @endif
+                                        
                                     </td>
                                 </tr>
                             @empty

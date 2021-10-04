@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="stretched">
+<body class="stretched" data-loader="6" data-loader-color="theme">
 
     <!-- Document Wrapper
     ============================================= -->
@@ -31,13 +31,7 @@
 
         @include('theme.'.env('FRONTEND_TEMPLATE').'.layout.header')
 
-        <section id="slider" class="slick-wrapper clearfix">
-            <div class="banner-wrapper">
-                <div class="container-fluid">
-                    @include('theme.'.env('FRONTEND_TEMPLATE').'.layout.banner')
-                </div>
-            </div>
-        </section>
+        @include('theme.'.env('FRONTEND_TEMPLATE').'.layout.banner')
 
 
         <!-- Content
