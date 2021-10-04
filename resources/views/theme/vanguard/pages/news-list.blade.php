@@ -5,6 +5,7 @@
 
 @section('content')
 <section id="section-content">
+    <canvas id="canvas"></canvas>
     <div class="content-wrap">
 
         <div class="container clearfix position-static">
@@ -15,7 +16,8 @@
                     <span onclick="openNav()" class="button noleftmargin d-lg-none mb-4"><span class="icon-chevron-left mr-2"></span> Filter</span>
                 </div>
                 <div class="col-lg-3">
-                    <div class="tablet-view">
+                    <div class="tablet-view py-4 px-4" data-animate="fadeInLeft">
+                        <div class="overlay rounded-20px" style="z-index:-2;"></div>
                         <a href="javascript:void(0)" class="closebtn d-block d-lg-none" onclick="closeNav()">&times;</a>
                         <h3>News</h3>
                         <div class="side-menu">
@@ -75,7 +77,7 @@
                                 <div class="news-post-img" style="background-image:url('{{ asset('storage/news_image/news_thumbnail/No_Image_Available.jpg')}}')"></div>
                             @endif
                             <div class="news-post-info">
-                                <div class="news-post-content">
+                                <div class="news-post-content w-100">
                                     <h3>
                                         <a href="{{ route('news.front.show',$article->slug) }}">{{ $article->name }}</a>
                                     </h3>

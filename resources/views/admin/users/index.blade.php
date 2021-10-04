@@ -126,7 +126,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <nav class="nav table-options justify-content-end">
+                                        <nav class="nav table-options justify-content-end flex-nowrap">
                                             @if($user->is_active == 1)
                                                 @if(auth()->user()->has_access_to_route('users.edit'))
                                                     <a class="nav-link" href="{{ route('users.edit', $user->id) }}" title="Edit User"><i data-feather="edit"></i></a>

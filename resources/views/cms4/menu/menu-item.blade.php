@@ -5,9 +5,12 @@
     <li class="dd-item" id="li{{ $randomId }}" data-id="{{ $link->id }}" data-page_id="{{ $link->page_id }}" data-type="page" data-label="{{ $link->page->label }}">
         <div class="dd-handle bg-light">
             <span class="drag-indicator"></span>
-            <div>
-                <strong @if($link->page->status == "PRIVATE") style="opacity: 0.4;" @endif>{{ $link->page->name }}</strong><span class="tx-italic tx-12 tx-gray-500 mg-l-5"  id="label{{ $randomId }}">{{ $link->page->label }}</span>
-                <p class="mg-b-0 tx-gray-500 tx-11">
+            <div class="pr-2">
+                <div class="d-flex align-items-start align-items-md-end align-items-lg-end flex-column flex-md-row flex-lg-row">
+                <strong class="mg-r-5" @if($link->page->status == "PRIVATE") style="opacity: 0.4;" @endif>{{ $link->page->name }}</strong>
+                <span class="tx-italic tx-12 tx-gray-500"  id="label{{ $randomId }}">{{ $link->page->label }}</span>
+                </div>
+                <p class="mg-b-0 tx-gray-500 tx-11 text-break">
                     {{ $link->page->get_url() }}
                 </p>
             </div>
@@ -30,7 +33,7 @@
             <span class="drag-indicator"></span>
             <div>
                 <strong id="label{{ $randomId }}">{{ $link->label }}</strong>
-                <p class="mg-b-0 tx-gray-500 tx-11" id="url{{ $randomId }}">
+                <p class="mg-b-0 tx-gray-500 tx-11 text-break" id="url{{ $randomId }}">
                     {{$link->uri}}
                 </p>
             </div>

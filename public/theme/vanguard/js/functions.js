@@ -5312,8 +5312,7 @@ var SEMICOLON = SEMICOLON || {};
 	});
 
 	$(".side-menu li").each(function () {
-		$(this).parents("ul").css("display", "block");
-		$(this).parents("ul").next(".dropdown-append").addClass("dropdown-open");
+		$(this).find("ul").css("display", "none");
 	});
 
 	$(".dropdown-append").on("click", function () {

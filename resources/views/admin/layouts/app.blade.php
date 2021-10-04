@@ -147,7 +147,6 @@
     <script src="{{ asset('js/dashforge.aside.js') }}"></script>
     <script src="{{ asset('js/dashforge.sampledata.js') }}"></script>
 
-
     @yield('customjs')
 
     @if(Session::has('success'))

@@ -10038,6 +10038,12 @@ button.bg-dark:focus {
 	color: #fff !important;
 }
 
+@media (min-width: 992px) {
+	.text-lg-white {
+		color: #fff !important;
+	}
+}
+
 .text-primary {
 	color: #007bff !important;
 }
@@ -10047,7 +10053,7 @@ a.text-primary:hover, a.text-primary:focus {
 }
 
 .text-secondary {
-	color: #6c757d !important;
+	color: #6c757d;
 }
 
 a.text-secondary:hover, a.text-secondary:focus {

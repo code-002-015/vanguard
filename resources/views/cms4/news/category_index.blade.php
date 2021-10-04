@@ -108,7 +108,7 @@
                                     <button class="btn filter" id="btnSearch"><i data-feather="search"></i></button>
                                 </div>
                                 @if (auth()->user()->has_access_to_route('news-categories.create'))
-                                    <a class="btn btn-primary btn-sm mg-b-5" href="{{ route('news-categories.create') }}">Create a Category</a>
+                                    <a class="btn btn-primary btn-sm mg-b-5 mt-lg-0 mt-md-0 mt-sm-0 mt-1" href="{{ route('news-categories.create') }}">Create a Category</a>
                                 @endif
                             </form>
                         </div>

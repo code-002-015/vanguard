@@ -29,7 +29,7 @@
                 <h4 class="mg-b-0 tx-spacing--1">Manage Access Rights</h4>
             </div>
             <div>
-                <button type="submit" class="btn btn-sm btn-primary" id="saveRolePermission"><i data-feather="save"></i> Save Changes</button>
+                <button type="submit" class="btn btn-sm btn-primary mt-lg-0 mt-md-0 mt-sm-0 mt-3" id="saveRolePermission"><i data-feather="save"></i> Save Changes</button>
             </div>
         </div>
 

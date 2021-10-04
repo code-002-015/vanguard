@@ -82,13 +82,12 @@
         <div class="col-md-12">
             <div class="mg-b-10">
                 <div class="table-responsive-lg table-audit">
-                    <table class="table mg-b-0 table-light table-hover">
+                    <table class="table mg-b-0 table-light table-hover" style="word-break: break-all;">
                         <thead>
                             <tr>
-                                <th scope="col" class="wd-10p">Name</th>
-                                <th scope="col" class="wd-5p">Role</th>
-								<th scope="col" class="wd-5p">Type</th>
-								<th scope="col" class="wd-25p">Description</th>
+                                <th scope="col" class="wd-15p">Name</th>
+								<th scope="col" class="wd-10p">Type</th>
+								<th scope="col" class="wd-30p">Description</th>
 								<th scope="col" class="wd-20p">Old Value</th>
 								<th scope="col" class="wd-20p">New Value</th>
 								<th scope="col" class="wd-5p">Module</th>
@@ -99,11 +98,10 @@
 							@forelse($logs as $log)
 								<tr>
 									<td>
-										<a href="{{ route('users.show', $log->log_by) }}"><strong>{{ ucwords($log->admin->fullname) }}</strong></a>
+										<a href="{{ route('users.show', $log->log_by) }}"><strong>{{ ucwords($log->admin->fullname) }}</strong><br><span class="badge badge-primary">{{ $log->admin->userRole($log->log_by) }}</span></a>
 									</td>
-									<td><span class="badge badge-primary">{{ $log->admin->userRole($log->log_by) }}</span></td>
 									<td>{{ $log->activity_type }}</td>
-									<td><a class="log_values" href="#modal-values" data-toggle="modal" data-new="{{$log->new_value}}" data-old="{{$log->old_value}}">{{ $log->activity_desc }}</a></td>
+									<td><a class="log_values" href="#modal-values" data-toggle="modal" data-new="{{$log->new_value}}" data-old="{{$log->old_value}}">{{ str_limit($log->activity_desc, 50, $end ='...') }}</a></td>
 									<td>{{ str_limit($log->old_value, 30, $end ='...') }}</td>
 									<td>{{ str_limit($log->new_value, 30, $end ='...') }}</td>
                                     <td>{{ ucwords($log->db_table) }}</td>

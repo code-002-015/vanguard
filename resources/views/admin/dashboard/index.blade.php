@@ -130,25 +130,25 @@
                         </div>
                     @endif
                     <div class=" @if (auth()->user()->has_access_to_pages_module() || auth()->user()->has_access_to_albums_module() || auth()->user()->has_access_to_user_module() || auth()->user()->has_access_to_news_module()) col-lg-9 col-md-8 @else col-lg-12 @endif">
-                        <div class="card dashboard-recent mg-t-20">
-                            <div class="card-header">
+                        <div class="card position-relative dashboard-recent mg-t-20 h-xs-100 overflow-y-auto">
+                            <div class="card-header position-sticky z-index-10 bg-white" style="top:0">
                                 My Recent Activities
                             </div>
                             <div class="card-body">
                                 <div class="list-group">
                                     @forelse($logs as $log)
-                                        <p class="list-group-item list-group-item-action">
+                                        <p class="list-group-item list-group-item-action d-flex flex-column flex-lg-row flex-lg-start mb-2 mb-lg-0">
                                             {{--<a href="{{route('settings.audit')}}?search={{$log->id}}" target="_blank">--}}
-                                            <span class="badge badge-dark">{{ ucwords($log->admin->firstname) }} {{ ucwords($log->admin->lastname) }}</span>
+                                            <span class="badge badge-dark lh-7 align-self-start mr-2">{{ ucwords($log->admin->firstname) }} {{ ucwords($log->admin->lastname) }}</span>
                                             {{--</a> --}}
-                                            {{ $log->dashboard_activity }} at {{ Setting::date_for_listing($log->activity_date) }}
+                                            <span?>{{ $log->dashboard_activity }} at <span class="text-nowrap">{{ Setting::date_for_listing($log->activity_date) }}</span></span>
                                         </p>
                                     @empty
                                         No activities found!
                                     @endforelse
                                 </div>
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer position-sticky z-index-10 bg-white" style="bottom:0">
                                 <div class="d-flex justify-content-end">
                                     <span class="tx-12"><a href="{{ route('users.show', Auth::user()->id) }}">Show all activities <i class="fa fa-arrow-right"></i></a></span>
                                 </div>

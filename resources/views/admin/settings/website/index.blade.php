@@ -28,9 +28,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Website</a>
                     </li>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Contact</a>
-                    </li> -->
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#social" role="tab" aria-controls="social" aria-selected="false">Social Media</a>
                     </li>
@@ -98,11 +98,11 @@
                                     </p>
                                     @if(empty($web->website_favicon))
                                         <div id="icon_div" style="display:none;">
-                                            <img src="" height="100" width="300" id="icon_temp" alt="Website Favicon">  <br /><br />
+                                            <img src="" height="100" width="250" id="icon_temp" alt="Website Favicon">  <br /><br />
                                         </div>
                                     @else
                                         <div>
-                                            <img src="{{ asset('storage/icons/'.$web->website_favicon) }}" height="100" width="300" id="icon_temp" alt="Website Favicon">  <br /><br />
+                                            <img src="{{ asset('storage/icons/'.$web->website_favicon) }}" height="100" width="250" id="icon_temp" alt="Website Favicon">  <br /><br />
                                             <button type="button" class="btn btn-danger btn-xs btn-uppercase remove-icon" type="button"><i data-feather="x"></i> Remove Icon</button>
                                         </div>
                                     @endif

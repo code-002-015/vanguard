@@ -81,7 +81,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <button class="btn btn-success btn-sm btn-secondary btn-block btn-uppercase" type="button" id="addPageToMenu"><i data-feather="plus"></i> Add</button>
+                                        <button class="btn btn-success btn-sm btn-secondary btn-block btn-uppercase mt-lg-0 mt-md-0 mt-sm-1 mt-1" type="button" id="addPageToMenu"><i data-feather="plus"></i> Add</button>
                                     </div>
                                 </div>
 
