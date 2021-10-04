@@ -7,6 +7,7 @@
 
 @section('content')
 <section id="section-content">
+    <canvas id="canvas"></canvas>
     <div class="content-wrap">
 
         <div class="container clearfix position-static">
@@ -47,12 +48,12 @@
 
                 <div class="col-lg-9 mb-xs-4">
                     @if(isset($breadcrumb))
-                        <ol class="breadcrumb nobottommargin">
+                        <ol class="breadcrumb nobottommargin d-flex flex-nowrap">
                             @foreach($breadcrumb as $link => $url)
                                 @if($loop->last)
-                                    <li class="breadcrumb-item active" aria-current="page">{{$link}}</li>
+                                    <li class="breadcrumb-item active ellipsis" aria-current="page">{{$link}}</li>
                                 @else
-                                    <li class="breadcrumb-item"><a href="{{$url}}">{{$link}}</a></li>
+                                    <li class="breadcrumb-item text-nowrap"><a href="{{$url}}">{{$link}}</a></li>
                                 @endif
                             @endforeach
                         </ol>
@@ -72,8 +73,8 @@
                         </div>
                     </div>
                     <div class="article-content">
-                        @if($news->image_url)
-                            <img src="{{ $news->image_url }}" alt="..." />
+                        @if($news->thumbnail_url)
+                            <img class="mb-2" src="{{ $news->thumbnail_url }}" alt="..." data-aos="fade-in" data-aos-duration="1500" data-aos-once="true" data-aos-easing="ease-in-back" />
                             <hr>
                         @endif
                         
@@ -89,8 +90,6 @@
 @endsection
 
 @section('pagejs')
-    <script src="{{ asset('theme/sysu/plugins/jssocials/jssocials.js') }}"></script>
-    <script src="{{ asset('theme/sysu/plugins/jssocials/jssocials-extension.js') }}"></script>
 @endsection
 
 @section('customjs')

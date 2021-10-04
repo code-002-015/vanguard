@@ -105,7 +105,7 @@
                                 <button class="btn"><i data-feather="search"></i></button>
                             </div>
                             @if(auth()->user()->has_access_to_route('menus.create'))
-                                <a href="{{ route('menus.create') }}" class="btn btn-primary btn-sm mg-b-5">Create a Menu</a>
+                                <a href="{{ route('menus.create') }}" class="btn btn-primary btn-sm mg-b-5 mt-lg-0 mt-md-0 mt-sm-0 mt-1">Create a Menu</a>
                             @endif
                         </form>
                     </div>
@@ -115,7 +115,7 @@
         <div class="col-md-12">
             <div class="table-list mg-b-10">
                 <div class="table-responsive-lg">
-                    <table class="table mg-b-0 table-light table-hover" style="width:100%;word-wrap: break-word;">
+                    <table class="table mg-b-0 table-light table-hover" style="width:100%;word-wrap: break-word;min-width:500px">
                         <thead>
                             <tr>
                                 <th>
@@ -124,7 +124,7 @@
                                         <label class="custom-control-label" for="checkbox_all"></label>
                                     </div>
                                 </th>
-                                <th scope="col" width="50%">Menu Name</th>
+                                <th scope="col" class="wd-35p-f we-lg-50p-f">Menu Name</th>
                                 <th scope="col">Menu Status</th>
                                 <th scope="col">Date Modified</th>
                                 <th scope="col" class="text-right">Options</th>
@@ -159,7 +159,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        {{ \App\Helpers\Webfocus\Setting::date_for_listing($menu->updated_at) }}
+                                        <span class="text-nowrap">{{ \App\Helpers\Webfocus\Setting::date_for_listing($menu->updated_at) }}</span>
                                     </td>
                                     <td>
                                         @if($menu->trashed())

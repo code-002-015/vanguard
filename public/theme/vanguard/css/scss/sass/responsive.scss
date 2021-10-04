@@ -8,6 +8,9 @@
 
 
 @media only screen and (max-width: 1199.98px) {
+	#primary-menu ul.primary-menu-list li>a {
+		margin-right: 20px;
+	}
 
 	canvas {
 		max-width: 100%;
@@ -237,6 +240,35 @@
 
 
 @media only screen and (max-width: 991px) {
+	.slick-next, .slick-prev {
+		top: 25% !important;
+	}
+
+	#banner .hero-slide {
+		display: flex;
+    	flex-direction: column;
+	}
+
+	.button.custom {
+		border-color: var(--theme-color) !important;
+		color: var(--dark-color) !important;
+
+		&:hover {
+			border-color: var(--theme-color) !important;
+			color: white !important;
+		}
+
+		&:before {
+			background-color: var(--theme-color) !important;
+		}
+	}
+
+	.banner-caption {
+		position: relative;
+		background: linear-gradient(90deg,#e1a1a5,#c3f5d7);
+		height: auto;
+		padding: 40px 0;
+	}
 
 	#content .content-wrap {
 		padding: 60px 0;
@@ -608,6 +640,12 @@
 		}
 	}
 
+	#primary-menu ul.primary-menu-list li.sub-menu ul > li.current > a {
+		&:before {
+			background-color: transparent !important;
+		}
+	}
+
 	#primary-menu.style-5 > ul > li > a > div { line-height: 22px; }
 
 	#primary-menu.style-5 > ul > li > a > div i {
@@ -660,6 +698,11 @@
 			background-image: url("../images/icons/submenu-dark.png");
 			background-blend-mode: screen;
 		}
+	}
+
+	#primary-menu > ul > li.current.sub-menu > a {
+		background-image: url("../images/icons/submenu-dark.png");
+		background-blend-mode: screen;
 	}
 
 	#primary-menu ul.primary-menu-list li.mega-menu { position: relative; }
@@ -836,7 +879,7 @@
 		transition: margin .4s ease;
 	}
 
-	#top-search a { right: 43px; }
+	#top-search a { right: 25px; }
 
 	#side-panel-trigger { right: 71px; }
 
@@ -1388,6 +1431,12 @@
 	}
 }
 
+@media (max-width: 974px) {
+	.tablet-view {
+		background: linear-gradient(to right, #E1A1A5 0%, #C3F5D7 100%);
+	}
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
 
 	.swiper_wrapper:not(.full-screen):not(.canvas-slider-grid),
@@ -1431,10 +1480,10 @@
 		}
 	}
 
-	.banner-caption {
-		padding-left: 45px;
-		padding-right: 45px;
-	}
+	// .banner-caption {
+	// 	padding-left: 45px;
+	// 	padding-right: 45px;
+	// }
 
 	.banner-caption h2 {
 		font-size: 36px;
@@ -2478,10 +2527,6 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
 }
 
 @media (max-width: 478px) {
-	
-	.banner-caption h2 {
-		font-size: 20px;
-	}
 
 	.banner-caption p {
 		font-size: 14px !important;
@@ -2493,10 +2538,6 @@ only screen and (                min-resolution: 2dppx) and (max-width: 991.98px
 }
 
 @media (max-width: 375px) {
-	
-	.banner-caption h2 {
-		font-size: 14px;
-	}
 
 	#logo img {
 		height: 55px;

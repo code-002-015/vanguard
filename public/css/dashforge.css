@@ -41075,3 +41075,15 @@ a.bg-twitter:hover, a.bg-twitter:focus, button.bg-twitter:hover, button.bg-twitt
 
 .wd-280 {
   width: 280px; }
+
+@media (min-width: 576px) {
+  .h-sm-auto {
+    height: auto !important;
+  }
+}
+
+@media (min-width: 320px) {
+  .h-xs-100 {
+    height: auto;
+  }
+}

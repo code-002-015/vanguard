@@ -312,6 +312,10 @@ body.device-md, body.device-sm, body.device-xs {
 	transition: margin .4s ease, padding .4s ease;
 }
 
+#primary-menu ul.primary-menu-list li > a.button {
+	color: white;
+}
+
 #primary-menu ul.primary-menu-list li > a span { display: none; }
 
 #primary-menu ul.primary-menu-list li > a i {
@@ -420,9 +424,16 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content { display: block; 
 #primary-menu ul.primary-menu-list ul li > a i { vertical-align: middle; }
 
 #primary-menu ul.primary-menu-list ul li:hover > a, #primary-menu ul.primary-menu-list ul li.current > a {
-	background-color: #F9F9F9;
+	background-color: #fff !important;
 	padding-left: 18px;
 	color: var(--theme-color);
+	font-weight: 700;
+}
+
+#primary-menu ul.primary-menu-list ul li.current.sub-menu > a {
+	&:before {
+		content: none;
+	}
 }
 
 #primary-menu ul.primary-menu-list ul > li.sub-menu > a,

@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="row">
 	<div class="col-lg-12" style="padding:0;">
 		<div class="sub-banner-caption">
@@ -24,4 +24,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->

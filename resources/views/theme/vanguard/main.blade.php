@@ -45,14 +45,6 @@
 
         @include('theme.'.env('FRONTEND_TEMPLATE').'.layout.banner')
 
-        {{--<section id="slider" class="slick-wrapper clearfix">
-            <div class="banner-wrapper">
-                <div class="container-fluid">
-                    @include('theme.'.env('FRONTEND_TEMPLATE').'.layout.banner')
-                </div>
-            </div>
-        </section>--}}
-
 
         <!-- Content
         ============================================= -->

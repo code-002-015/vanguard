@@ -11,7 +11,7 @@
     if ($featuredArticles->count()) {
 
         $featuredArticlesHTML = '<section class="position-relative" id="section-news">
-                                    <div class="content-wrap pb-0" style="z-index:2">
+                                    <div class="content-wrap" style="z-index:2">
                                         <div class="container">
                                             <h6 class="mb-2 ls5 text-uppercase text-secondary text-center">News and Updates</h6>
                                             <h2 class="mb-4 text-center">Latest News</h2>
@@ -25,7 +25,7 @@
 
             
             $featuredArticlesHTML .= '<div class="col-lg-4 mb-5 mb-lg-0">
-                                        <div class="card rounded-20px">
+                                        <div class="card shadow rounded-20px border-0">
                                             <img class="card-img-top rounded-top-20px" src="'. $imageUrl .'" alt="Card image cap">
                                             <div class="card-body p-4">
                                                 <p class="card-text mb-2"><small class="text-muted">Posted on '. $article->date_posted() .'</small></p>
@@ -42,7 +42,6 @@
         }
 
         $featuredArticlesHTML .= '</div>
-                        <img class="d-block mx-auto pt-5" src="'. $prefooter .'" alt="">
                     </div>
                 </div>          
             </section>';

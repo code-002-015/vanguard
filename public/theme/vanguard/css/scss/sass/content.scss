@@ -46,9 +46,9 @@ body:not(.device-touch) .grid-container {
     left: 0px;
     top: 0px;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, #E1A1A5 0%, #C3F5D7 100%);
+    background: linear-gradient(to right, #E1A1A5 0%, #C3F5D7 100%);
     opacity: 1;
+    bottom: 0;
 }
 
 #section-cta {
@@ -146,7 +146,7 @@ body:not(.device-touch) .grid-container {
     position: absolute;
     width: 100% !important;
     height: 100%;
-    padding: 0;
+    padding: 0 20px;
     margin: 0;
     top: 0;
     left: 0;
@@ -256,4 +256,34 @@ body:not(.device-touch) .grid-container {
     padding-bottom: 20px;
     border-bottom: 1px solid #e3eaef;
     margin-bottom: 20px
+}
+
+.book-card {
+	position: relative;
+	will-change: transform;
+	transition: box-shadow .3s ease;
+	box-shadow: 0 10px 40px transparent;
+}
+
+.book-card.hover-in {
+	transition: -webkit-transform .2s ease-out;
+	transition: transform .2s ease-out;
+	transition: transform .2s ease-out, -webkit-transform .2s ease-out;
+}
+
+.book-card.hover-out {
+	transition: -webkit-transform .2s ease-in;
+	transition: transform .2s ease-in;
+	transition: transform .2s ease-in, -webkit-transform .2s ease-in;
+}
+
+.book-wrap { -moz-transform-style: flat !important; }
+
+#canvas {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
 }

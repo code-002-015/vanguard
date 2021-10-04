@@ -109,7 +109,7 @@ Manage News
                                     <input name="search" type="search" id="search" class="form-control" placeholder="Search by Title" value="{{ $filter->search }}">
                                     <button class="btn filter" id="btnSearch"><i data-feather="search"></i></button>
                                 </div>
-                                <a class="btn btn-success btn-sm mg-b-5" href="javascript:void(0)" data-toggle="modal" data-target="#advanceSearchModal">{{__('common.advance_search')}}</a>
+                                <a class="btn btn-success btn-sm mg-b-5 mt-lg-0 mt-md-0 mt-sm-0 mt-1" href="javascript:void(0)" data-toggle="modal" data-target="#advanceSearchModal">{{__('common.advance_search')}}</a>
                             </form>
                         </div>
                         <div class="mg-t-10">
@@ -126,7 +126,7 @@ Manage News
             <div class="col-md-12">
                 <div class="table-list mg-b-10">
                     <div class="table-responsive-lg">
-                        <table class="table mg-b-0 table-light table-hover" style="word-wrap: break-word;">
+                        <table class="table mg-b-0 table-light table-hover" style="word-wrap: break-word;min-width: 700pxs">
                             <thead>
                                 <tr>
                                     <th style="width: 10%">
@@ -164,16 +164,16 @@ Manage News
                                         <td>
                                             @if($new->is_featured=='1')<span class="badge badge-success">Featured</span>@endif</td>
                                         <td style="text-transform:capitalize !important;">{!! ($new->trashed() ? '<span class="badge badge-danger">Deleted</span>':strtolower($new->status)) !!}</td>
-                                        <td>{{ Setting::date_for_listing($new->updated_at) }}</td>
+                                        <td><span class="text-nowrap">{{ Setting::date_for_listing($new->updated_at) }}</span></td>
                                         <td>
                                             @if($new->trashed())
                                                 @if (auth()->user()->has_access_to_route('news.restore'))
-                                                    <nav class="nav table-options justify-content-end">
+                                                    <nav class="nav table-options justify-content-end flex-nowrap">
                                                         <a class="nav-link" href="{{route('news.restore',$new->id)}}" title="Restore this news"><i data-feather="rotate-ccw"></i></a>
                                                     </nav>
                                                 @endif
                                             @else
-                                                <nav class="nav table-options justify-content-end">
+                                                <nav class="nav table-options justify-content-end flex-nowrap">
                                                     <a class="nav-link" target="_blank" href="{{route('news.front.show',$new->slug)}}" title="View News"><i data-feather="eye"></i></a>
 
                                                     @if(auth()->user()->has_access_to_route('news.edit'))

@@ -15,7 +15,7 @@
 	height: 40px;
 	line-height: 40px;
 	background-color: var(--theme-color);
-	color: #FFF !important;
+	color: #FFF;
 	font-weight: normal;
 	text-transform: uppercase;
 	border: none;
@@ -23,11 +23,11 @@
 	border-radius: 50px;
 }
 
-body:not(.device-touch) .button {
-	-webkit-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out !important;
-}
+// body:not(.device-touch) .button {
+// 	-webkit-transition: all .2s ease-in-out;
+// 	-o-transition: all .2s ease-in-out;
+// 	transition: all .2s ease-in-out !important;
+// }
 
 .button-dark { background-color: #444; }
 
@@ -411,8 +411,8 @@ body:not(.device-touch) .button.button-full strong {
 }
 
 .button.button-border.button-fill.button-light:hover {
-	border-color: #EEE !important;
-	color: #333 !important;
+	border-color: #EEE;
+	color: #333;
 	text-shadow: none;
 }
 
@@ -428,6 +428,7 @@ body:not(.device-touch) .button.button-full strong {
 	-o-transition: all .4s ease;
 	transition: all .4s ease;
 	backface-visibility: hidden;
+	z-index: -1;
 }
 
 .button.button-border.button-fill.button-light:before { background-color: #EEE; }
