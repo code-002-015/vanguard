@@ -21,7 +21,7 @@
         <div class="dropdown-divider"></div>
 
         <a href="{{ route('account.edit', Auth::user()->id ) }}" class="dropdown-item"><i data-feather="edit-3"></i> Account Settings</a>
-        <!-- <a href="page-help-center.html" class="dropdown-item"><i data-feather="help-circle"></i> Help</a> -->
+        <a href="{{ URL::asset('user-manual/TheVanguardAcademyUserGuideOct2021.pdf') }}" target="_blank" class="dropdown-item"><i data-feather="help-circle"></i> Help</a>
         <a href="{{route('logout')}}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i data-feather="log-out"></i>Log Out</a>
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
