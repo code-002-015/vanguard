@@ -22,77 +22,6 @@ Route::post('/news/{slug}/share', 'Cms4Controllers\ArticleFrontController@news_s
 Route::get('/albums/preview', 'FrontController@test')->name('albums.preview');
 
 
-Route::get('careers-jobs/{categorySlug}', 'Career\CareerFrontController@jobs')->name('careers.jobs');
-Route::get('careers-job-info/{categorySlug}/{id}', 'Career\CareerFrontController@show')->name('careers.front.show');
-Route::post('careers-apply', 'Career\CareerFrontController@apply')->name('careers.front.apply');
-
-Route::get('careers-team','Career\CareerFrontController@teams')->name('careers.team');
-Route::get('careers-faq','Career\CareerFrontController@faq')->name('careers.faq');
-Route::get('careers-list','Career\CareerFrontController@list')->name('careers.list');
-
-
-// Route::get('careers', 'Career\CareerFrontController@index')->name('careers.front.index');
-// Route::get('careers/{categorySlug}', 'Career\CareerFrontController@index')->name('careers.front.category');
-// Route::get('careers/{categorySlug}/{careerSlug}', 'Career\CareerFrontController@show')->name('careers.front.show');
-// Route::post('careers-apply', 'Career\CareerFrontController@apply')->name('careers.front.apply');
-
-// Route::get('careers-team','Career\CareerFrontController@teams')->name('careers.team');
-// Route::get('careers-faq','Career\CareerFrontController@faq')->name('careers.faq');
-// Route::get('careers-list','Career\CareerFrontController@list')->name('careers.list');
-
-
-
-
-############# Customer ####################
-// Route::group(['middleware' => ['authenticated']], function () {
-//     Route::post('product/review/store', 'EcommerceControllers\ProductReviewController@store')->name('product.review.store');
-//     Route::get('/checkout', 'EcommerceControllers\CheckoutController@checkout')->name('cart.front.checkout');
-//     Route::post('/temp_save','EcommerceControllers\CartController@save_sales')->name('cart.temp_sales');
-//     Route::get('/account/sales', 'EcommerceControllers\SalesFrontController@sales_list')->name('profile.sales');
-//     Route::post('/account/product-reorder','EcommerceControllers\SalesFrontController@reorder')->name('profile.sales-reorder-product');
-//     Route::post('/account/reorder', 'EcommerceControllers\SalesFrontController@reorder')->name('my-account.reorder');
-//     Route::post('/account/cancel/order', 'EcommerceControllers\SalesFrontController@cancel_order')->name('my-account.cancel-order');
-//     Route::get('/account/manage', 'EcommerceControllers\MyAccountController@manage_account')->name('my-account.manage-account');
-//     Route::post('/account/manage', 'EcommerceControllers\MyAccountController@update_personal_info')->name('my-account.update-personal-info');
-//     Route::post('/account/manage/update-contact', 'EcommerceControllers\MyAccountController@update_contact_info')->name('my-account.update-contact-info');
-//     Route::post('/account/manage/update-address', 'EcommerceControllers\MyAccountController@update_address_info')->name('my-account.update-address-info');
-
-//     Route::get('/account/change-password', 'EcommerceControllers\MyAccountController@change_password')->name('my-account.change-password');
-
-//     Route::post('/account/change-password', 'EcommerceControllers\MyAccountController@update_password')->name('my-account.update-password');
-
-//     Route::get('/account/pay/{id}', 'EcommerceControllers\CartController@pay_again')->name('my-account.pay-again');
-
-//     // Paynamics Notification
-
-//     // Favorites
-//     Route::get('/account/favorites','EcommerceControllers\FavoriteController@index_front')->name('profile.favorites');
-//     Route::get('/favorite/product-add-to-cart/{id}','EcommerceControllers\FavoriteController@add_to_cart')->name('favorite.product-add-to-cart');
-//     Route::post('/favorite/remove-product','EcommerceControllers\FavoriteController@remove_product')->name('favorite.remove-product');
-//     Route::post('/add-to-favorites','EcommerceControllers\FavoriteController@btn_add_to_favorites')->name('btn-add-to-favorites');
-//     Route::post('/remove-to-favorites','EcommerceControllers\FavoriteController@btn_remove_to_favorites')->name('btn-remove-to-favorites');
-//     Route::get('/product-add-to-wishlit/{productid}','EcommerceControllers\FavoriteController@add_to_wishlist')->name('favorite.add-to-wishlist');
-
-//     // Wishlist
-//     Route::get('/account/wishlist','EcommerceControllers\WishlistController@index_front')->name('profile.wishlist');
-
-//     Route::get('/wishlist/add-to-cart/{id}','EcommerceControllers\WishlistController@add_to_cart')->name('wishlist.add-to-cart');
-//     Route::post('/add-to-wishlist','EcommerceControllers\WishlistController@add_to_wishlist')->name('add-to-wishlist');
-//     Route::post('/remove-to-wishlist','EcommerceControllers\WishlistController@remove_to_wishlist')->name('remove-to-wishlist');
-//     Route::post('/wishlist/remove-product','EcommerceControllers\WishlistController@remove_product')->name('wishlist.remove-product');
-
-//     // Coupons
-//     Route::get('/account/claimed-coupons','EcommerceControllers\CouponFrontController@claimed')->name('coupons-claimed');
-
-//     Route::get('/checkout-use-coupon/{id}','EcommerceControllers\CouponFrontController@use_coupon')->name('use-coupon');
-
-//     Route::post('/add-manual-coupon','EcommerceControllers\CouponFrontController@add_manual_coupon')->name('add-manual-coupon');
-
-//     Route::get('/display-collectibles', 'EcommerceControllers\CouponFrontController@collectibles')->name('display.collectibles');
-//     Route::get('/remove-coupon/{id}','EcommerceControllers\CheckoutController@remove_coupon')->name('checkout.remove-coupon');
-// });
-##############################################################
-
 Route::group(['prefix' => env('APP_PANEL', 'cerebro')], function () {
 
     Route::get('/', 'Auth\LoginController@showLoginForm')->name('panel.login');
@@ -102,19 +31,6 @@ Route::group(['prefix' => env('APP_PANEL', 'cerebro')], function () {
     Route::group(['middleware' => 'admin'], function () {
 
         Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-
-        //// CAREER ////
-        Route::resource('career-categories', 'Career\CareerCategoryController')->except(['show']);
-        Route::post('career-categories-change-status', 'Career\CareerCategoryController@change_status')->name('career-categories.change.status');
-        Route::delete('many/career-category', 'Career\CareerCategoryController@destroy_many')->name('career-categories.destroy_many');
-        Route::post('career-categories/{careerCategory}/restore', 'Career\CareerCategoryController@restore')->name('career-categories.restore');
-
-        Route::resource('careers', 'Career\CareerController')->except(['show']);
-        Route::post('careers-change-status', 'Career\CareerController@change_status')->name('careers.change.status');
-        Route::delete('many/career', 'Career\CareerController@destroy_many')->name('careers.destroy_many');
-        Route::post('careers/{career}/restore', 'Career\CareerController@restore')->name('careers.restore');
-        Route::get('career-applicants', 'Career\CareerController@index_applicants')->name('careers.applicants');
-        //// END CAREER ////
 
         // Account
         Route::get('/account/edit', 'Settings\AccountController@edit')->name('account.edit');
