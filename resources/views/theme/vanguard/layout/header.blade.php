@@ -19,15 +19,15 @@
                         <form class="top-search-form mb-0" action="search.html" method="get">
                         <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
                     </form>
-                        <div class="header-socials d-flex font-weight-bold">
-                            <span class="mr-3">Find our latest updates:</span>
+                        <div class="header-socials d-flex fw-bold">
+                            <span class="me-3">Find our latest updates:</span>
                             <ul class="list-inline">
                                 @php 
                                     $socmed = \App\MediaAccounts::all();
                                 @endphp
 
                                 @foreach($socmed as $media)
-                                    <li class="list-inline-item mr-3"><a class="text-primary" href="{{$media->media_account}}" target="_blank"><i class="icon-{{$media->name}}"></i></a></li>
+                                    <li class="list-inline-item me-3"><a class="text-primary" href="{{$media->media_account}}" target="_blank"><i class="icon-{{$media->name}}"></i></a></li>
                                 @endforeach
                             </ul>                   
                         </div>
