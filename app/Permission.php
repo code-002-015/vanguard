@@ -68,19 +68,6 @@ class Permission extends Model
             'website_settings' => 'Website Settings',
             'audit_logs' => 'Audit Trail',
             'user' => 'Users',
-            'product' => 'Products',
-            'product_category' => 'Product Category',
-            'product_reviews' => 'Product Reviews',
-            'favorites' => 'Favorites',
-            'wishlist' => 'Wishlist',
-            'customer' => 'Customers',
-            'sales_transaction' => 'Sales Transaction',
-            'inventory' => 'Inventory',
-            'promos' => "Promos",
-            'coupons' => "Coupons",
-            'careers' => 'Careers',
-            'career_category' => 'Career Category',
-            'reports' => 'Reports',
         ];
     }
 
@@ -169,20 +156,5 @@ class Permission extends Model
                 'reference' => $model->id
             ]);
         });
-
-        // self::restored(function($model){
-        //     $name = $model[self::$name];
-        //     ActivityLog::create([
-        //         'log_by' => auth()->id(),
-        //         'activity_type' => 'restore',
-        //         'dashboard_activity' => 'restore a '. self::$tableTitle,
-        //         'activity_desc' => 'restore the '. self::$tableTitle .' '. $name,
-        //         'activity_date' => date("Y-m-d H:i:s"),
-        //         'db_table' => $model->getTable(),
-        //         'old_value' => '',
-        //         'new_value' => '',
-        //         'reference' => $model->id
-        //     ]);
-        // });
     }
 }

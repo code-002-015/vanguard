@@ -132,20 +132,5 @@ class Banner extends Model
                 'reference' => $model->id
             ]);
         });
-
-        // self::restored(function($model){
-        //     $name = $model[self::$name];
-        //     ActivityLog::create([
-        //         'log_by' => auth()->id(),
-        //         'activity_type' => 'restore',
-        //         'dashboard_activity' => 'restore a '. self::$tableTitle,
-        //         'activity_desc' => 'restore the '. self::$tableTitle .' '. $name,
-        //         'activity_date' => date("Y-m-d H:i:s"),
-        //         'db_table' => $model->getTable(),
-        //         'old_value' => '',
-        //         'new_value' => '',
-        //         'reference' => $model->id
-        //     ]);
-        // });
     }
 }
