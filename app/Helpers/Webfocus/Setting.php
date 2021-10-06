@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Helpers\Webfocus;
-use App\EcommerceModel\Cart;
-use App\Product;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
@@ -38,20 +36,6 @@ class Setting {
 
     public static function getFooter()
     {
-        $delete_old_entries = \App\EcommerceModel\Cart::where('updated_at','<',Carbon::now()->subDays(2))->delete();
-        $old_sales = \App\EcommerceModel\SalesHeader::where('updated_at','<',Carbon::now()->subDays(2))->whereStatus('active')->get();
-        foreach($old_sales as $s){
-             $paid = \App\EcommerceModel\SalesPayment::where('sales_header_id',$s->id)->whereStatus('PAID')->sum('amount');
-             if($paid<=0){
-                $cancel_sales = \App\EcommerceModel\SalesHeader::whereId($s->id)->update([
-                    'deleted_at' => date('Y-m-d H:i:s'),
-                    'status' => 'CANCELLED',
-                    'delivery_status' => 'CANCELLED'
-                ]);
-             }
-        }
-;
-        
         $footer = DB::table('pages')->where('slug', 'footer')->where('name', 'footer')->first();
 
         return $footer;
@@ -147,83 +131,5 @@ class Setting {
         $settings = DB::table('settings')->where('id',1)->first();
 
         return asset('storage').'/icons/'.$settings->website_favicon;
-    }
-
-    public static function EcommerceCartTotalItems()
-    {
-        if (\Auth::check()) {
-            return Cart::total_items_of_auth_cart();
-        } else {
-            return Cart::total_items_of_guest_cart();
-        }
-    }
-
-    public static function belowReorderTotal()
-    {
-        $products = \App\EcommerceModel\Product::all();
-        $x = 0;
-        foreach($products as $product){
-            if($product->reorder_point > 0 && $product->Inventory <= $product->reorder_point){
-                $x++;           
-            }
-        }
-
-        return $x;
-    }
-
-    public static function outOfStockTotal()
-    {
-        $products = \App\EcommerceModel\Product::all();
-        $x = 0;
-        foreach($products as $product){
-            if($product->Inventory <= 0){
-                $x++;           
-            }
-        }
-
-        return $x;
-    }
-
-    public static function EcommerceCartTotalProductPrice() //
-    {
-        if (\Auth::check()) {
-            $cart = Cart::where('user_id', auth()->id())->get();
-        } else {
-            $cart = session('cart', []);
-        }
-
-        $totalCost = 0;
-        foreach($cart as $order) {
-            $totalCost += $order->price * $order->qty;
-        }
-
-        return $totalCost;
-    }
-
-    public static function paynamics_merchant()
-    {
-        if (env('APP_ENV') == 'production') {
-        
-            return [
-                'id' => '0000000806200B898D54',
-                'key' => 'E40BE25D0BAA86AD45A046ADB00CB9CE',
-                'url' => 'https://ptiapps.paynamics.net/webpayment/Default.aspx'
-            ];
-        
-           
-            // return [
-            //     'id' => '00000019121943FC3BD7',
-            //     'key' => '6B1198B811715D83148DB4E7FC981A54',
-            //     'url' => 'https://testpti.payserv.net/webpayment/Default.aspx'
-            // ];
-            
-            
-        } else {
-            return [
-                'id' => '00000019121943FC3BD7',
-                'key' => '6B1198B811715D83148DB4E7FC981A54',
-                'url' => 'https://testpti.payserv.net/webpayment/Default.aspx'
-            ];
-        }
     }
 }
