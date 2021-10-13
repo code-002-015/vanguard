@@ -20,6 +20,7 @@ Route::get('/news/{slug}/print', 'Cms4Controllers\ArticleFrontController@news_pr
 Route::post('/news/{slug}/share', 'Cms4Controllers\ArticleFrontController@news_share')->name('news.front.share');
 
 Route::get('/albums/preview', 'FrontController@test')->name('albums.preview');
+Route::get('/search-result','FrontController@seach_result')->name('search.result');
 
 
 Route::group(['prefix' => env('APP_PANEL', 'cerebro')], function () {

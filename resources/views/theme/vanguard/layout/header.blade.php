@@ -16,9 +16,9 @@
             <nav id="primary-menu">
                 <div class="primary-menu-wrap d-flex justify-content-end align-items-center w-100 mb-3">
                     <div class="d-flex">
-                        <form class="top-search-form mb-0" action="search.html" method="get">
-                        <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
-                    </form>
+                        <form class="top-search-form mb-0" action="{{route('search.result')}}" method="get">
+                            <input type="text" name="searchtxt" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
+                        </form>
                         <div class="header-socials d-flex fw-bold">
                             <span class="me-3">Find our latest updates:</span>
                             <ul class="list-inline">
