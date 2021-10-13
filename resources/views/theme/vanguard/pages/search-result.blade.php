@@ -13,9 +13,16 @@
             </div>
 
             @foreach($searchResult as $rs)
+            @php
+                if($rs->getTable() == 'articles'){
+                    $link = 'news/'.$rs->slug;
+                } else {
+                    $link = $rs->slug;
+                }
+            @endphp
             <div class="search-item">
-                <h4 class="mb-1"><a href="{{ url('/'.$rs->slug) }}" target="_blank">{{ $rs->name }}</a></h4>
-                <div class="font-13 text-success mb-3">{{ url('/'.$rs->slug) }}</div>
+                <h4 class="mb-1"><a href="{{ url('/'.$link) }}" target="_blank">{{ $rs->name }}</a></h4>
+                <div class="font-13 text-success mb-3">{{ url('/'.$link) }}</div>
             </div>
             @endforeach
 
