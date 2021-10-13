@@ -103,10 +103,10 @@
                                     <button class="btn"><i data-feather="search"></i></button>
                                 </div>
                                 @if(auth()->user()->has_access_to_route('albums.edit'))
-                                    <a href="{{ route('albums.edit', 1) }}" class="btn btn-primary btn-sm mg-b-5">Manage Home Banner</a>
+                                    <a href="{{ route('albums.edit', 1) }}" class="btn btn-primary btn-sm mg-b-5 mt-lg-0 mt-md-0 mt-sm-0 mt-1">Manage Home Banner</a>
                                 @endif
                                 @if(auth()->user()->has_access_to_route('albums.create'))
-                                    <a href="{{route('albums.create')}}" class="btn btn-primary btn-sm mg-b-5 mg-l-5">Create an Album</a>
+                                    <a href="{{route('albums.create')}}" class="btn btn-primary btn-sm mg-b-5 mg-l-5 mt-lg-0 mt-md-0 mt-sm-0 mt-1">Create an Album</a>
                                 @endif
                             </form>
                         </div>
@@ -144,11 +144,11 @@
                                         <strong @if($album->trashed()) style="text-decoration:line-through;" @endif title="{{ $album->name }}">{{ $album->name }}</strong>
                                     </td>
                                     <td>{{ $album->banners->count() }}</td>
-                                    <td>{{ Setting::date_for_listing($album->updated_at) }}</td>
+                                    <td><span class="text-nowrap">{{ Setting::date_for_listing($album->updated_at) }}</span></td>
                                     <td>
                                         @if($album->trashed())
                                             @if (auth()->user()->has_access_to_route('albums.restore'))
-                                                <nav class="nav table-options justify-content-end">
+                                                <nav class="nav table-options justify-content-end flex-nowrap">
                                                     <form id="form{{$album->id}}" method="post" action="{{ route('albums.restore', $album->id) }}">
                                                         @csrf
                                                         @method('POST')
@@ -157,7 +157,7 @@
                                                 </nav>
                                             @endif
                                         @else
-                                            <nav class="nav table-options justify-content-end">
+                                            <nav class="nav table-options justify-content-end flex-nowrap">
                                                 @if(auth()->user()->has_access_to_route('albums.edit'))
                                                     <a class="nav-link" title="Edit banner" href="{{ route('albums.edit', $album->id) }}"><i data-feather="edit"></i></a>
                                                 @endif
