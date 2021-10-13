@@ -44,19 +44,33 @@ class FrontController extends Controller
 
     }
 
-    public function search(Request $request)
+    public function seach_result(Request $request)
     {
-        $searchFields = ['name', 'label', 'contents'];
-
-        $searchPages = ListingHelper::simple_search(Page::class, $searchFields);
-
-
-        $filter = ListingHelper::get_filter($searchFields);
-
         $page = new Page();
-        $page->name = 'Search';
+        $page->name = 'Search Results';
 
-        return view('theme.'.env('FRONTEND_TEMPLATE').'.pages.search', compact('searchPages', 'filter', 'page'));
+        $breadcrumb = $this->breadcrumb($page);
+        $pageLimit = 10;
+
+        $searchtxt = $request->searchtxt; 
+        $pages = Page::where('status','PUBLISHED')
+            ->select('name','slug')
+            ->whereNotIn('slug',['footer','home'])
+            ->where('name','like','%'.$searchtxt.'%')
+            ->orWhere('contents','like','%'.$searchtxt.'%')
+            ->orderBy('name','asc')->get();
+
+        $news = Article::where('status','PUBLISHED')
+            ->select('name','slug')
+            ->where('name','like','%'.$searchtxt.'%')
+            ->orWhere('contents','like','%'.$searchtxt.'%')
+            ->orderBy('name','asc')->get();
+
+        $totalItems = $pages->count()+$news->count();
+
+        $searchResult = collect($pages)->merge($news)->paginate(10);
+
+        return view('theme.'.env('FRONTEND_TEMPLATE').'.pages.search-result', compact('searchResult', 'totalItems', 'page','breadcrumb'));
     }
 
     public function page($slug)
